@@ -2,7 +2,8 @@ function solve(arr) {
     let result = [];
 
     arr.map(num =>
-        Number(num) < 0 ?
+       
+            Number(num) < 0 ?
             result.unshift(Number(num)) :
             result.push(Number(num))
     );
