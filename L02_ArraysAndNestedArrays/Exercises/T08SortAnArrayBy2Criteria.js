@@ -4,6 +4,7 @@ function solve(arr) {
             ? a.toLocaleLowerCase().localeCompare(b.toLocaleLowerCase())
             : a.length - b.length
     )
+    
         .join('\n')
 }
 
