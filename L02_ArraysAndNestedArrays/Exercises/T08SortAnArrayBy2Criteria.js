@@ -4,7 +4,7 @@ function solve(arr) {
             ? a.toLocaleLowerCase().localeCompare(b.toLocaleLowerCase())
             : a.length - b.length
     )
-    .join('\n')
+     .join('\n')
 }
 
 console.log(solve(['alpha', 'beta', 'gamma']));
