@@ -5,6 +5,7 @@ function solve(arr) {
 
     let areEqual = array => array.every(v => v === array[0]);
 
+    
     return areEqual(sumRow) && areEqual(sumRow) && sumRow.toString() === sumCol.toString();
 }
 
