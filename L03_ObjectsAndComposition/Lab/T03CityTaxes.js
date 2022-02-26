@@ -26,6 +26,7 @@ const city =
     solve('Tortuga',
         7000,
         15000);
+
 city.collectTaxes();
 console.log(city.treasury);
 city.applyGrowth(5);
