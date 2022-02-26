@@ -2,8 +2,7 @@ function solve(input) {
     const parsed = JSON.parse(input);
 
     const escapeChar = w =>
-       
-    `${w}`
+        `${w}`
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
