@@ -1,4 +1,5 @@
 function solve(input) {
+  
     const parsed = JSON.parse(input);
 
     const escapeChar = w =>
