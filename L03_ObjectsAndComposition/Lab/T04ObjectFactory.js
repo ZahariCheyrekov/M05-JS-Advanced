@@ -45,4 +45,5 @@ const orders = [
 ]
 
 const products = factory(library, orders);
+
 console.log(products);
