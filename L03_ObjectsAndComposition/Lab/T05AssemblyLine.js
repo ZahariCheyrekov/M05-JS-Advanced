@@ -1,6 +1,7 @@
 function createAssemblyLine() {
 
     return {
+     
         hasClima: (car) => {
             car.temp = 21;
             car.tempSettings = 21;
