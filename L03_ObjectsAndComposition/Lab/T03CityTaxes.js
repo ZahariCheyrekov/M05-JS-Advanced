@@ -29,5 +29,6 @@ const city =
 
 city.collectTaxes();
 console.log(city.treasury);
+
 city.applyGrowth(5);
 console.log(city.population);
