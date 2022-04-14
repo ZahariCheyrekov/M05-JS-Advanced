@@ -9,7 +9,6 @@ function solve(townsData) {
         if (towns[name] != undefined) {
             population += towns[name]
         }
-
         towns[name] = population;
     }
 
