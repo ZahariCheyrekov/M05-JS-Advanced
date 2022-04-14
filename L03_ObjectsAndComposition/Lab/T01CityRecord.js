@@ -4,7 +4,6 @@ function solve(name, population, treasury) {
         population,
         treasury
     }
-
     return city;
 }
 
