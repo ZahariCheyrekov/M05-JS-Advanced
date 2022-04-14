@@ -6,7 +6,6 @@ function createAssemblyLine() {
             car.temp = 21;
             car.tempSettings = 21;
             car.adjustTemp = () => {
-        
                 if (car.temp < car.tempSettings) {
                     car.temp++;
                 } else if (car.temp > car.tempSettings) {
