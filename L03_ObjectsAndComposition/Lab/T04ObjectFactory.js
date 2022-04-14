@@ -9,7 +9,6 @@ function factory(library, orders) {
         }
         result.push(current);
     }
-
     return result;
 }
 
