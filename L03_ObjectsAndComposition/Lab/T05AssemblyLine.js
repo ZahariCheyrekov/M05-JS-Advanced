@@ -27,7 +27,6 @@ function createAssemblyLine() {
 
         hasParktronic: (car) => {
             car.checkDistance = (distance) => {
-           
                 if (distance < 0.1) {
                     console.log('Beep! Beep! Beep!');
                 } else if (distance >= 0.1 && distance < 0.25) {
