@@ -18,7 +18,6 @@ function createAssemblyLine() {
         hasAudio: (car) => {
             car.currentTrack = { 'name': '', 'artist': '' };
             car.nowPlaying = () => {
-            
                 if (car.currentTrack !== null) {
                     console.log(`Now playing '${car.currentTrack.name}' by ${car.currentTrack.artist}`);
                 }
