@@ -8,8 +8,8 @@ function solve(input) {
             .replace(/>/g, "&gt;")
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#39;")
-   
-            const makeRow = (tag, data) =>
+
+    const makeRow = (tag, data) =>
         `<tr>${data.map(x => `<${tag}>${escapeChar(x)}</${tag}>`).join("")}</tr>`
 
     return `<table>
