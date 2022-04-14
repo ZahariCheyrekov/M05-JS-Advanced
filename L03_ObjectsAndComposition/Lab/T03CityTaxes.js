@@ -21,7 +21,7 @@ const city = solve('Tortuga',
     15000);
 console.log(city);
 
-const city =
+const otherCity =
     solve('Tortuga',
         7000,
         15000);
