@@ -12,7 +12,6 @@ function createAssemblyLine() {
                 } else if (car.temp > car.tempSettings) {
                     car.temp--;
                 }
-
             };
         },
 
