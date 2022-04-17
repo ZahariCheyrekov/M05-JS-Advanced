@@ -9,7 +9,7 @@ function search() {
       el.style.textDecoration = '';
       document.getElementById('result').textContent = '';
    });
-
+ 
    if (text.trim() == '') {
       el.style.fontWeight = 'normal';
       el.style.textDecoration = '';
