@@ -2,7 +2,7 @@ function search() {
    const listItems = Array.from(document.querySelectorAll('ul li'));
    const text = document.getElementById('searchText').value;
 
-   let resultsFound = 0;
+   let resultsFound = 0; 
 
    listItems.forEach((el) => {
       el.style.fontWeight = 'normal';
