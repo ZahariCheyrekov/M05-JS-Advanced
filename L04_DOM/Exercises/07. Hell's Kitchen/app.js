@@ -12,7 +12,7 @@ function solve() {
 
    const getAverage = workersData =>
       workersData.reduce((a, v) => a + v[1], 0) / workersData.length;
-
+ 
    function deserialize(data) {
       const getWorkers = data =>
          data
