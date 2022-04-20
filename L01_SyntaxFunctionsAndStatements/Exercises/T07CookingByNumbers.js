@@ -1,4 +1,4 @@
-function foo(...args) {
+function solve(...args) {
     let n = Number(args.shift())
 
     const actions = {
