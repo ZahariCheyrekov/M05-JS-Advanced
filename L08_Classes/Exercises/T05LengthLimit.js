@@ -31,4 +31,4 @@ test.decrease(5);
 console.log(test.toString()); // ...
 
 test.increase(4);
-console.log(test.toString()); // Test
+console.log(test.toString());
