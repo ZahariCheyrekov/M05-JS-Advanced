@@ -25,7 +25,7 @@ let test = new Stringer("Test", 5);
 console.log(test.toString());
 
 test.decrease(3);
-console.log(test.toString()); // Te...
+console.log(test.toString());
 
 test.decrease(5);
 console.log(test.toString());
