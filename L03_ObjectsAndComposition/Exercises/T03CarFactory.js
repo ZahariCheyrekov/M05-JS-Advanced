@@ -15,7 +15,7 @@ function sovle({ model, power, color, carriage, wheelsize }) {
     }
 
     let size = wheelsize;
-    if (wheelsize % 2 === 0) {
+    if (wheelsize % 2 == 0) {
         size--;
     }
 
