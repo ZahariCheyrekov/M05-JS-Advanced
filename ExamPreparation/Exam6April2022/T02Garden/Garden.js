@@ -16,7 +16,7 @@ class Garden {
     }
 
     ripenPlant(plantName, quantity) {
-        const plant = this.plants.some(plant => plant.plantName == plantName);
+        const plant = this.findPlantByName(plantName);
 
         if (!plant) {
             throw new Error(`There is no ${plantName} in the garden.`);
@@ -38,5 +38,11 @@ class Garden {
             : `${quantity} ${plantName}s has successfully ripened.`;
 
         return message;
+    }
+
+  
+
+    findPlantByName(plantName) {
+        return this.plants.some(plant => plant.plantName == plantName);
     }
 }
