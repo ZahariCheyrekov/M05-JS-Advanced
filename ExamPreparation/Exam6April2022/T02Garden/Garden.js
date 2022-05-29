@@ -35,7 +35,7 @@ class Garden {
 
         const message = quantity == 1
             ? `${quantity} ${plantName} has successfully ripened.`
-            : `${quantity} ${plantName}s has successfully ripened.`;
+            : `${quantity} ${plantName}s have successfully ripened.`;
 
         return message;
     }
@@ -51,9 +51,9 @@ class Garden {
             throw new Error(`The ${plantName} cannot be harvested before it is ripe.`);
         }
 
-        let plantIndex = this.plants.indexOf(plantName);
-        this.plants.splice(plantIndex, 1);
+        let plantIndex = this.plants.indexOf(plant);
         this.storage.push(`${plant.plantName} (${plant.quantity})`);
+        this.plants.splice(plantIndex, 1);
         this.spaceAvailable += plant.spaceRequired;
         return `The ${plantName} has been successfully harvested.`;
     }
@@ -76,8 +76,8 @@ class Garden {
         return report.join('\n');
     }
 
-    findPlantByName(plantName) {
-        return this.plants.some(plant => plant.plantName == plantName);
+    findPlantByName(name) {
+        return this.plants.find(p => p.plantName == name);
     }
 }
 
