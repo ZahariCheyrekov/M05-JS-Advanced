@@ -22,6 +22,38 @@ class CarDealership {
         return `New car added: ${model} - ${horsepower} HP - ${mileage.toFixed(2)} km - ${price.toFixed(2)}$`;
     }
 
+    
+    sellCar(model, desiredMileage) {
+        const availableCar = this.availableCars.find(c => c.model == model);
+
+        if (!availableCar) {
+            throw new Error(`${model} was not found!`);
+        }
+
+        const mileageDiff = availableCar.mileage - desiredMileage;
+
+        if (availableCar.mileage <= desiredMileage) {
+            availableCar.price = availableCar.price;
+        } else if (mileageDiff <= 40000) {
+            availableCar.price *= 0.95;
+        } else if (mileageDiff > 40000) {
+            availableCar.price *= 0.90;
+        }
+
+        const carIndex = this.availableCars.indexOf(availableCar);
+        this.availableCars.splice(carIndex, 1);
+
+        this.soldCars.push({
+            model: availableCar.model,
+            horsepower: availableCar.horsepower,
+            soldPrice: availableCar.price
+        });
+
+        this.totalIncome += availableCar.price;
+        return `${model} was sold for ${availableCar.price.toFixed(2)}$`;
+    }
+
+    
 }
 
 let dealership = new CarDealership('SoftAuto');
