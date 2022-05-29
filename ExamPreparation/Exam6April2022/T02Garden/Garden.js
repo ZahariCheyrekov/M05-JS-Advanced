@@ -58,6 +58,24 @@ class Garden {
         return `The ${plantName} has been successfully harvested.`;
     }
 
+    generateReport() {
+        let report = [];
+        report.push(`The garden has ${this.spaceAvailable} free space left.`);
+
+        const sortedPlants = this.plants.sort((a, b) => a.plantName.localeCompare(b.plantName));
+        let sorted = [];
+        sortedPlants.forEach(p => sorted.push(p.plantName));
+
+        report.push(`Plants in the garden: ${sorted.join(', ')}`);
+        if (this.storage.length == 0) {
+            report.push('Plants in storage: The storage is empty.');
+        } else {
+            report.push(`Plants in storage: ${this.storage.join(', ')}`);
+        }
+
+        return report.join('\n');
+    }
+
     findPlantByName(plantName) {
         return this.plants.some(plant => plant.plantName == plantName);
     }
