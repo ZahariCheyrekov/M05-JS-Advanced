@@ -17,6 +17,11 @@ function solve() {
       return;
     }
 
+    createElements();
+    clearInputFields();
+  }
+
+  function createElements() {
     const liItem = document.createElement('li');
     liItem.classList.add('rpost');
 
@@ -46,12 +51,10 @@ function solve() {
     articleEl.appendChild(contentPost);
 
     liItem.appendChild(articleEl);
-    liItem.appendChild(editBtn);
     liItem.appendChild(approveBtn);
+    liItem.appendChild(editBtn);
 
     ulEl.appendChild(liItem);
-
-    clearInputFields();
   }
 
   function clearInputFields() {
