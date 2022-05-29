@@ -53,4 +53,30 @@ describe('BookSelection Tests', () => {
             assert.equal(expectedMessage, actualMessage);
         });
     });
+
+    describe('Tests should check if the titles are suitable', () => {
+        it('should throw error for invalid parameter different than an array', () => {
+            expect(() => bookSelection.suitableTitles('theyAren\'t', 'NiceBook')).to.throw(Error);
+        });
+
+        it('should throw error for invalid parameter different than string', () => {
+            expect(() => bookSelection.suitableTitles([], 10)).to.throw(Error);
+        });
+
+        it('should throw error for invalid type of parameters', () => {
+            expect(() => bookSelection.suitableTitles('a', 10)).to.throw(Error);
+        });
+
+        it('should return array of books by given genre', () => {
+            const expectedResult = ['Steve Jobs', 'Elon Musk', 'Nikola Tesla'];
+
+            const actualResult = bookSelection.suitableTitles([
+                { title: 'The Da Vinci Code', genre: 'Thriller' },
+                { title: 'Steve Jobs', genre: 'Biography' },
+                { title: 'Elon Musk', genre: 'Biography' },
+                { title: 'Nikola Tesla', genre: 'Biography' },], 'Biography');
+
+            assert.deepEqual(expectedResult, actualResult);
+        });
+    });
 });
