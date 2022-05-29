@@ -9,6 +9,8 @@ function solve() {
 
   const ulEl = document.getElementById('review-list');
   const publishedList = document.getElementById('published-list');
+  const clearBtn = document.getElementById('clear-btn');
+  clearBtn.addEventListener('click', clearPosts);
 
   function getInformation() {
     const titleText = titleField.value;
@@ -19,7 +21,6 @@ function solve() {
     if (!titleText || !categoryText || !contentText) {
       return;
     }
-
 
     const liItem = document.createElement('li');
     liItem.classList.add('rpost');
@@ -71,6 +72,12 @@ function solve() {
     ulEl.appendChild(liItem);
 
     clearInputFields();
+  }
+
+  function clearPosts() {
+    while (publishedList.firstChild) {
+      publishedList.removeChild(publishedList.firstChild);
+    }
   }
 
   function clearInputFields() {
