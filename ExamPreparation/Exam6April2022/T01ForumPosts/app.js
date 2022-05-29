@@ -8,10 +8,18 @@ function solve() {
   publishBtn.addEventListener('click', getInformation);
 
   function getInformation() {
-    if (!titleField.textContent || !categoryField.textContent || !contentField.textContent) {
+    if (!titleField.value || !categoryField.value || !contentField.value) {
       return;
     }
 
-    
+    const ulItem = document.createElement('ul');
+
+    clearInputFields();
+  }
+
+  function clearInputFields() {
+    titleField.value = '';
+    categoryField.value = '';
+    contentField.value = '';
   }
 }
