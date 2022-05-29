@@ -40,7 +40,23 @@ class Garden {
         return message;
     }
 
-  
+    harvestPlant(plantName) {
+        const plant = this.findPlantByName(plantName);
+
+        if (!plant) {
+            throw new Error(`There is no ${plantName} in the garden.`);
+        }
+
+        if (!plant.ripe) {
+            throw new Error(`The ${plantName} cannot be harvested before it is ripe.`);
+        }
+
+        let plantIndex = this.plants.indexOf(plantName);
+        this.plants.splice(plantIndex, 1);
+        this.storage.push(`${plant.plantName} (${plant.quantity})`);
+        this.spaceAvailable += plant.spaceRequired;
+        return `The ${plantName} has been successfully harvested.`;
+    }
 
     findPlantByName(plantName) {
         return this.plants.some(plant => plant.plantName == plantName);
