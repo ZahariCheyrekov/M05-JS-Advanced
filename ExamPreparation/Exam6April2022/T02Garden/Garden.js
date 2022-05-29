@@ -80,3 +80,12 @@ class Garden {
         return this.plants.some(plant => plant.plantName == plantName);
     }
 }
+
+const myGarden = new Garden(250)
+console.log(myGarden.addPlant('apple', 20));
+console.log(myGarden.addPlant('orange', 200));
+console.log(myGarden.addPlant('raspberry', 10));
+console.log(myGarden.ripenPlant('apple', 10));
+console.log(myGarden.ripenPlant('orange', 1));
+console.log(myGarden.harvestPlant('orange'));
+console.log(myGarden.generateReport());
