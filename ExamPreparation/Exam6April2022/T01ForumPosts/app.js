@@ -17,11 +17,8 @@ function solve() {
       return;
     }
 
-    createElements();
     clearInputFields();
-  }
 
-  function createElements() {
     const liItem = document.createElement('li');
     liItem.classList.add('rpost');
 
@@ -40,6 +37,13 @@ function solve() {
     editBtn.classList.add('action-btn');
     editBtn.classList.add('edit');
     editBtn.textContent = 'Edit';
+    editBtn.addEventListener('click', () => {
+      ulEl.removeChild(liItem);
+
+      titleField.value = titleText;
+      categoryField.value = categoryText;
+      contentField.value = contentText;
+    });
 
     const approveBtn = document.createElement('button');
     approveBtn.classList.add('action-btn');
