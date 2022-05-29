@@ -12,12 +12,12 @@ function solve() {
     const titleText = titleField.value;
     const categoryText = categoryField.value;
     const contentText = contentField.value;
+    let elementToRemove = null;
 
     if (!titleText || !categoryText || !contentText) {
       return;
     }
 
-    clearInputFields();
 
     const liItem = document.createElement('li');
     liItem.classList.add('rpost');
@@ -49,6 +49,10 @@ function solve() {
     approveBtn.classList.add('action-btn');
     approveBtn.classList.add('approve');
     approveBtn.textContent = 'Approve';
+    approveBtn.addEventListener('click', (ev) => {
+      elementToRemove = ev.target.parentElement;
+      ulEl.removeChild(elementToRemove);
+    });
 
     articleEl.appendChild(titlePost);
     articleEl.appendChild(categoryPost);
@@ -59,6 +63,8 @@ function solve() {
     liItem.appendChild(editBtn);
 
     ulEl.appendChild(liItem);
+
+    clearInputFields();
   }
 
   function clearInputFields() {
