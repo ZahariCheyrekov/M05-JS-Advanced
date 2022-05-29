@@ -5,8 +5,10 @@ function solve() {
   const categoryField = document.getElementById('post-category');
   const contentField = document.getElementById('post-content');
   const publishBtn = document.getElementById('publish-btn');
-  const ulEl = document.getElementById('review-list');
   publishBtn.addEventListener('click', getInformation);
+
+  const ulEl = document.getElementById('review-list');
+  const publishedList = document.getElementById('published-list');
 
   function getInformation() {
     const titleText = titleField.value;
@@ -51,7 +53,11 @@ function solve() {
     approveBtn.textContent = 'Approve';
     approveBtn.addEventListener('click', (ev) => {
       elementToRemove = ev.target.parentElement;
+      elementToRemove.removeChild(editBtn);
+      elementToRemove.removeChild(approveBtn);
+
       ulEl.removeChild(elementToRemove);
+      publishedList.appendChild(elementToRemove);
     });
 
     articleEl.appendChild(titlePost);
