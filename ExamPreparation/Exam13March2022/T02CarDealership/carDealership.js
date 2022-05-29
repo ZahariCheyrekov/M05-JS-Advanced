@@ -22,7 +22,7 @@ class CarDealership {
         return `New car added: ${model} - ${horsepower} HP - ${mileage.toFixed(2)} km - ${price.toFixed(2)}$`;
     }
 
-    
+
     sellCar(model, desiredMileage) {
         const availableCar = this.availableCars.find(c => c.model == model);
 
@@ -53,7 +53,40 @@ class CarDealership {
         return `${model} was sold for ${availableCar.price.toFixed(2)}$`;
     }
 
-    
+    currentCar() {
+        if (!this.availableCars.length) {
+            return 'There are no available cars';
+        } else {
+            let result = [];
+
+            result.push('-Available cars:');
+            this.availableCars.forEach(car =>
+                result.push(`---${car.model} - ${car.horsepower} HP - ${car.mileage.toFixed(2)} km - ${car.price.toFixed(2)}$`));
+
+            return result.join('\n');
+        }
+    }
+
+    salesReport(criteria) {
+        let sortedCars = null;
+
+        if (criteria == 'horsepower') {
+            sortedCars = this.soldCars.sort((c1, c2) => c2.horsepower - c1.horsepower);
+        } else if (criteria == 'model') {
+            sortedCars = this.soldCars.sort((c1, c2) => c1.model.localeCompare(c2.model));
+        } else {
+            throw new Error('Invalid criteria!');
+        }
+
+        let report = [];
+
+        report.push(`-${this.name} has a total income of ${this.totalIncome.toFixed(2)}$`);
+        report.push(`-${this.soldCars.length} cars sold:`);
+
+        this.soldCars.forEach(car => report.push(`---${car.model} - ${car.horsepower} HP - ${car.soldPrice.toFixed(2)}$`));
+
+        return report.join('\n');
+    }
 }
 
 let dealership = new CarDealership('SoftAuto');
