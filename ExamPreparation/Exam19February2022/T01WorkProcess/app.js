@@ -47,6 +47,10 @@ function solve() {
         const firedButton = document.createElement('button');
         firedButton.textContent = 'Fired';
         firedButton.classList.add('fired');
+        firedButton.addEventListener('click', () => {
+            tbody.removeChild(tr);
+            decreaseBudget();
+        })
 
         const editButton = document.createElement('button');
         editButton.textContent = 'Edit';
@@ -60,10 +64,7 @@ function solve() {
             salaryField.value = salary;
 
             tbody.removeChild(tr);
-
-            let currentBudget = Number(totalBudget.textContent);
-            currentBudget -= Number(salary);
-            totalBudget.textContent = currentBudget.toFixed(2);
+            decreaseBudget();
         });
 
         trButtons.appendChild(firedButton);
@@ -83,8 +84,16 @@ function solve() {
         currentBudget += Number(salary);
         totalBudget.textContent = currentBudget.toFixed(2);
 
+        function decreaseBudget() {
+            let currentBudget = Number(totalBudget.textContent);
+            currentBudget -= Number(salary);
+            totalBudget.textContent = currentBudget.toFixed(2);
+        }
+
         clearInputFields();
     }
+
+
 
     function clearInputFields() {
         firstNameField.value = '';
