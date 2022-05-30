@@ -13,7 +13,7 @@ class VegetableStore {
             quantity = Number(quantity);
             price = Number(price);
 
-            const existingVegetable = this.availableProducts.find(p => p.type == type);
+            const existingVegetable = this.findVegetableByType(type);
 
             if (existingVegetable) {
                 existingVegetable.price += price;
@@ -42,7 +42,7 @@ class VegetableStore {
         for (const element of selectedProducts) {
             let [type, quantity] = element.split(' ');
 
-            const existingVegetable = this.availableProducts.find(p => p.type == type);
+            const existingVegetable = this.findVegetableByType(type);
 
             if (!existingVegetable) {
                 throw new Error(`${type} is not available in the store, your current bill is $${totalPrice.toFixed(2)}.`);
@@ -58,5 +58,13 @@ class VegetableStore {
         }
 
         return `Great choice! You must pay the following amount $${totalPrice.toFixed(2)}.`;
+    }
+
+    rottingVegetable(type, quantity) {
+
+    }
+
+    findVegetableByType(type) {
+        return this.availableProducts.find(v => v.type == type);
     }
 }
