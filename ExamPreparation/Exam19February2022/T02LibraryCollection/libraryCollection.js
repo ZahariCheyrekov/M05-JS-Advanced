@@ -19,6 +19,21 @@ class LibraryCollection {
         return `The ${bookName}, with an author ${bookAuthor}, collect.`;
     }
 
+    payBook(bookName) {
+        const book = this.findBookByName(bookName);
+
+        if (!book) {
+            throw new Error(`${bookName} is not in the collection.`);
+        }
+
+        if (book.payed) {
+            throw new Error(`${bookName} has already been paid.`);
+        }
+
+        book.payed = true;
+        return `${bookName} has been successfully paid.`;
+    }
+
     findBookByName(name) {
         return this.books.find(b => b.bookName == name);
     }
