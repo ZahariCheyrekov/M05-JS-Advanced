@@ -8,6 +8,12 @@ function solve() {
     const listOfMails = document.getElementById('list');
     const sendMails = document.querySelector('.sent-list');
     const deletedMails = document.querySelector('.delete-list');
+
+    addBtn.type = 'button';
+    resetBtn.type = 'button';
+
+    addBtn.addEventListener('click', deliverMail);
+    resetBtn.addEventListener('click', resetFieldValues);
 }
 
 solve();
