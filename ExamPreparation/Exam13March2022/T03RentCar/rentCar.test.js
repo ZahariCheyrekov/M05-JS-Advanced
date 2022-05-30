@@ -30,5 +30,19 @@ describe('RentCar Tests', () => {
         it('should throw error for not integer values', () => {
             expect(() => rentCar.checkBudget('a', 'a', 'a')).to.throw(Error);
         });
+
+        it('should rent a car successfully and return the correct message', () => {
+            const expectedMessage = 'You rent a car!';
+            const actualMessage = rentCar.checkBudget(5, 2, 100);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should rent a car successfully and return the correct message for the exact amount of budget', () => {
+            const expectedMessage = 'You rent a car!';
+            const actualMessage = rentCar.checkBudget(10, 10, 100);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        
     });
 });
