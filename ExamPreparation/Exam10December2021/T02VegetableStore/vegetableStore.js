@@ -61,7 +61,21 @@ class VegetableStore {
     }
 
     rottingVegetable(type, quantity) {
+        const vegetable = this.findVegetableByType(type);
 
+        if (!vegetable) {
+            throw new Error(`${type} is not available in the store.`);
+        }
+
+        if (quantity > vegetable.quantity) {
+            vegetable.quantity = 0;
+            return `The entire quantity of the ${type} has been removed.`;
+        } else {
+            vegetable.quantity -= quantity;
+            return `Some quantity of the ${type} has been removed.`;
+        }
+
+        
     }
 
     findVegetableByType(type) {
