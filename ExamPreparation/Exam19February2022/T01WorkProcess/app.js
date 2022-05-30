@@ -93,8 +93,6 @@ function solve() {
         clearInputFields();
     }
 
-
-
     function clearInputFields() {
         firstNameField.value = '';
         lastNameField.value = '';
