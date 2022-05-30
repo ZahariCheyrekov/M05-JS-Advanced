@@ -20,5 +20,12 @@ function solve() {
             return;
         }
 
+        clearInputFields();
+    }
+
+    function clearInputFields() {
+        description.value = '';
+        text.value = '';
+        phone.value = '';
     }
 }
