@@ -61,8 +61,8 @@ class LibraryCollection {
                 throw new Error(`${bookAuthor} is not in the collection.`);
             }
 
-            const bookPaid = checkIfPaid(book);
-            return `${book.bookName} == ${book.bookAuthor} - ${bookPaid}`;
+            const bookPaid = book.payed ? 'Has Paid' : 'Not Paid';
+            return `${book.bookName} == ${book.bookAuthor} - ${bookPaid}.`;
 
         } else {
             let emptySlots = this.capacity - this.books.length;
@@ -70,9 +70,9 @@ class LibraryCollection {
 
             const sortedBooks = this.books.sort((b1, b2) => b1.bookName.localeCompare(b2.bookName));
 
-            this.sortedBooks.forEach((book) => {
-                const bookPaid = checkIfPaid(book);
-                result.push(`${book.bookName} == ${book.bookAuthor} - ${bookPaid}`);
+            sortedBooks.forEach((book) => {
+                const bookPaid = book.payed ? 'Has Paid' : 'Not Paid';
+                result.push(`${book.bookName} == ${book.bookAuthor} - ${bookPaid}.`);
             });
         }
 
@@ -86,8 +86,11 @@ class LibraryCollection {
     findBookByAuthor(author) {
         return this.books.find(b => b.bookAuthor == author);
     }
-
-    checkIfPaid(book) {
-        return book.payed ? 'Has Paid' : 'Not Paid';
-    }
 }
+
+const library = new LibraryCollection(5)
+library.addBook('Don Quixote', 'Miguel de Cervantes');
+library.payBook('Don Quixote');
+library.addBook('In Search of Lost Time', 'Marcel Proust');
+library.addBook('Ulysses', 'James Joyce');
+console.log(library.getStatistics());
