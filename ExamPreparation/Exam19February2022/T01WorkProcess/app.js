@@ -11,6 +11,15 @@ function solve() {
 
     function hireWorker() {
     }
+
+    function clearInputFields() {
+        firstNameField.value = '';
+        lastNameField.value = '';
+        emailField.value = '';
+        birthField.value = '';
+        positionField.value = '';
+        salaryField.value = '';
+    }
 }
 
 solve();
