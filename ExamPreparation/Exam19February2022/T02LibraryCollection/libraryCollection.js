@@ -51,7 +51,12 @@ class LibraryCollection {
         return `${bookName} remove from the collection.`;
     }
 
+   
     findBookByName(name) {
         return this.books.find(b => b.bookName == name);
+    }
+
+    checkIfPaid(book) {
+        return book.payed ? 'Has Paid' : 'Not Paid';
     }
 }
