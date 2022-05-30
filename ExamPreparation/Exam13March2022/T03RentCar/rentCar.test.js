@@ -73,4 +73,24 @@ describe('RentCar Tests', () => {
             assert.equal(expectedMessage, actualMessage);
         });
     });
+
+    describe('Tests should find car by model', () => {
+        it('should throw error for not array type of the first value', () => {
+            expect(() => rentCar.searchCar('a', 'Audi')).to.throw(Error);
+        });
+
+        it('should throw error for not string type of the second value', () => {
+            expect(() => rentCar.searchCar([], 10)).to.throw(Error);
+        });
+
+        it('should throw error for invalid type of values', () => {
+            expect(() => rentCar.searchCar(10, 10)).to.throw(Error);
+        });
+
+        it('should trow error for no such models in the car catalogue', () => {
+            expect(() => rentCar.searchCar([], 'Audi')).to.throw(Error);
+        });
+
+        
+    });
 });
