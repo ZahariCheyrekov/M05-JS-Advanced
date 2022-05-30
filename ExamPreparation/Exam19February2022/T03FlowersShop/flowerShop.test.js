@@ -52,5 +52,29 @@ describe('FlowerShop tests', () => {
         });
     });
 
+    describe('Test should check sellFlowers function', () => {
+        it('should trow error for invalid gardenArr type different from array', () => {
+            expect(() => flowerShop.sellFlowers('invalid', 10)).to.throw(Error);
+        });
 
+        it('should trow error for invalid space type different from number', () => {
+            expect(() => flowerShop.sellFlowers([], 'invalid')).to.throw(Error);
+        });
+
+        it('should trow error for invalid gardenArr type and space', () => {
+            expect(() => flowerShop.sellFlowers('invalid', 'invalid')).to.throw(Error);
+        });
+
+        it('should trow error for invalid space in of the garden', () => {
+            expect(() => flowerShop.sellFlowers([], -10)).to.throw(Error);
+        });
+
+        it('should trow error for invalid space more than the gardenArr length', () => {
+            expect(() => flowerShop.sellFlowers([], 10)).to.throw(Error);
+        });
+
+        it('should trow error for invalid space equal to the gardenArr length', () => {
+            expect(() => flowerShop.sellFlowers(['Rose'], 1)).to.throw(Error);
+        });
+    })
 });
