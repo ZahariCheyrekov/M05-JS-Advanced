@@ -26,5 +26,25 @@ describe('CompanyAdministration Tests', () => {
         });
     });
 
-  
+    describe('Tests should check calculateSalary function', () => {
+        it('should throw error for input value of hours not a number', () => {
+            expect(() => companyAdministration.calculateSalary('invalid')).to.throw(Error);
+        });
+
+        it('should throw error for input value of hours less than zero', () => {
+            expect(() => companyAdministration.calculateSalary(-10)).to.throw(Error);
+        });
+
+        it('should calculate the total salary amount for less than 160 hours', () => {
+            const expectedAmount = 150;
+            const actualAmount = companyAdministration.calculateSalary(10);
+            assert.equal(expectedAmount, actualAmount);
+        });
+
+        it('should calculate the total salary amount for more than 160 hours', () => {
+            const expectedAmount = 4000;
+            const actualAmount = companyAdministration.calculateSalary(200);
+            assert.equal(expectedAmount, actualAmount);
+        });
+    });
 });
