@@ -16,10 +16,10 @@ class VegetableStore {
             const existingVegetable = this.findVegetableByType(type);
 
             if (existingVegetable) {
-                existingVegetable.price += price;
+                existingVegetable.quantity += quantity;
 
-                if (existingVegetable.quantity < quantity) {
-                    existingVegetable.quantity = quantity;
+                if (existingVegetable.price < price) {
+                    existingVegetable.price = price;
                 }
             } else {
                 const vegetable = {
@@ -74,8 +74,18 @@ class VegetableStore {
             vegetable.quantity -= quantity;
             return `Some quantity of the ${type} has been removed.`;
         }
+    }
 
-        
+    revision() {
+        let report = [];
+        report.push('Available vegetables:');
+
+        const sortedVeggies = this.availableProducts.sort((p1, p2) => p1.price - p2.price);
+        sortedVeggies.forEach(v => report.push(`${v.type}-${v.quantity}-$${v.price}`));
+
+        report.push(`The owner of the store is ${this.owner}, and the location is ${this.location}.`);
+
+        return report.join('\n');
     }
 
     findVegetableByType(type) {
