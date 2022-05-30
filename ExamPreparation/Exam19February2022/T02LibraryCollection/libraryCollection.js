@@ -51,9 +51,40 @@ class LibraryCollection {
         return `${bookName} remove from the collection.`;
     }
 
-   
+    getStatistics(bookAuthor) {
+        let result = [];
+
+        if (bookAuthor) {
+            const book = this.findBookByAuthor(bookAuthor);
+
+            if (!book) {
+                throw new Error(`${bookAuthor} is not in the collection.`);
+            }
+
+            const bookPaid = checkIfPaid(book);
+            return `${book.bookName} == ${book.bookAuthor} - ${bookPaid}`;
+
+        } else {
+            let emptySlots = this.capacity - this.books.length;
+            result.push(`The book collection has ${emptySlots} empty spots left.`);
+
+            const sortedBooks = this.books.sort((b1, b2) => b1.bookName.localeCompare(b2.bookName));
+
+            this.sortedBooks.forEach((book) => {
+                const bookPaid = checkIfPaid(book);
+                result.push(`${book.bookName} == ${book.bookAuthor} - ${bookPaid}`);
+            });
+        }
+
+        return result.join('\n');
+    }
+
     findBookByName(name) {
         return this.books.find(b => b.bookName == name);
+    }
+
+    findBookByAuthor(author) {
+        return this.books.find(b => b.bookAuthor == author);
     }
 
     checkIfPaid(book) {
