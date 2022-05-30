@@ -49,4 +49,24 @@ describe('RentCar Tests', () => {
             assert.equal(expectedMessage, actualMessage);
         });
     });
+
+    describe('Tests should calculate price of the car', () => {
+        it('should throw error for invalid model value with of type number', () => {
+            expect(() => rentCar.calculatePriceOfCar(10, 10)).to.throw(Error);
+        });
+
+        it('should throw error for invalid days value with of type string', () => {
+            expect(() => rentCar.calculatePriceOfCar('Audi', 'notValid')).to.throw(Error);
+        });
+
+        it('should throw error for invalid input calues', () => {
+            expect(() => rentCar.calculatePriceOfCar(10, 'notValid')).to.throw(Error);
+        });
+
+        it('should trow error for no such model in the car catalogue', () => {
+            expect(() => rentCar.calculatePriceOfCar('Lambo', 10)).to.throw(Error);
+        });
+
+       
+    });
 });
