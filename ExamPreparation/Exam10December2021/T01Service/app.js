@@ -31,16 +31,26 @@ function solve() {
         const clientInformation = document.createElement('h3');
         clientInformation.textContent = `Client information: ${nameContent}, ${phoneContent}`;
 
-        const description = document.createElement('h4');
-        description.textContent = `Description of the problem: ${descriptionContent}`;
+        const descriptionEl = document.createElement('h4');
+        descriptionEl.textContent = `Description of the problem: ${descriptionContent}`;
 
         const startRepairBtn = document.createElement('button');
         startRepairBtn.textContent = 'Start repair';
         startRepairBtn.classList.add('start-btn');
+       
 
         const finishRepairBtn = document.createElement('button');
         finishRepairBtn.textContent = 'Finish repair';
+        finishRepairBtn.disabled = true;
         finishRepairBtn.classList.add('finish-btn');
+
+        container.appendChild(productTypeRepair);
+        container.appendChild(clientInformation);
+        container.appendChild(descriptionEl);
+        container.appendChild(startRepairBtn);
+        container.appendChild(finishRepairBtn);
+
+        recievedOrdersSection.appendChild(container);
 
         clearInputFields();
     }
