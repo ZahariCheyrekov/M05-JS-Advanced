@@ -8,5 +8,17 @@ function solve() {
     const sendBtn = document.querySelector('form button');
     sendBtn.addEventListener('click', sendOrder);
 
-    
+    function sendOrder(ev) {
+        ev.preventDefault();
+
+        const productTypeContent = productType.value;
+        const descriptionContent = description.value;
+        const textContent = text.value;
+        const phoneContent = phone.value;
+
+        if (!descriptionContent || !textContent || !phoneContent) {
+            return;
+        }
+
+    }
 }
