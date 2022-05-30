@@ -41,10 +41,66 @@ describe('CompanyAdministration Tests', () => {
             assert.equal(expectedAmount, actualAmount);
         });
 
+        it('should calculate the total salary amount for 0 hours', () => {
+            const expectedAmount = 0;
+            const actualAmount = companyAdministration.calculateSalary(0);
+            assert.equal(expectedAmount, actualAmount);
+        });
+
         it('should calculate the total salary amount for more than 160 hours', () => {
             const expectedAmount = 4000;
             const actualAmount = companyAdministration.calculateSalary(200);
             assert.equal(expectedAmount, actualAmount);
+        });
+    });
+
+    describe('Tests should check firedEmployee function', () => {
+        it('should throw error for invalid input value of employees different from array', () => {
+            expect(() => companyAdministration.firedEmployee('invalid', 2)).to.throw(Error);
+        });
+
+        it('should throw error for invalid input value of index different from number', () => {
+            expect(() => companyAdministration.firedEmployee(['John'], 'invalid')).to.throw(Error);
+        });
+
+        it('should throw error for invalid input values', () => {
+            expect(() => companyAdministration.firedEmployee('invalid', 'invalid')).to.throw(Error);
+        });
+
+        it('should throw error for invalid index with value less than zero', () => {
+            expect(() => companyAdministration.firedEmployee(['John'], -10)).to.throw(Error);
+        });
+
+        it('should throw error for invalid index with value bigger than the array length', () => {
+            expect(() => companyAdministration.firedEmployee(['John'], 10)).to.throw(Error);
+        });
+
+        it('should throw error for invalid index with value equal to the array length', () => {
+            expect(() => companyAdministration.firedEmployee(['John'], 1)).to.throw(Error);
+        });
+
+        it('should throw error for only one value given', () => {
+            expect(() => companyAdministration.firedEmployee(10)).to.throw(Error);
+        });
+
+        it('should throw error for only array given value', () => {
+            expect(() => companyAdministration.firedEmployee(['John'])).to.throw(Error);
+        });
+
+        it('should throw error for no given values', () => {
+            expect(() => companyAdministration.firedEmployee()).to.throw(Error);
+        });
+
+        it('should return empty string from array of one value', () => {
+            const expectedResult = '';
+            const actualResult = companyAdministration.firedEmployee(['John'], 0);
+            assert.equal(expectedResult, actualResult);
+        });
+
+        it('should return every employee with different array index from the input index value', () => {
+            const expectedResult = 'a, b, c';
+            const actualResult = companyAdministration.firedEmployee(['a', 'b', 'c', 'd'], 3);
+            assert.equal(expectedResult, actualResult);
         });
     });
 });
