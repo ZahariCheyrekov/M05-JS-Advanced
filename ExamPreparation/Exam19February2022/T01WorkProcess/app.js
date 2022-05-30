@@ -10,6 +10,18 @@ function solve() {
     hireWorkerBtn.addEventListener('click', hireWorker);
 
     function hireWorker() {
+        const firstName = firstNameField.value
+        const lastName = lastNameField.value;
+        const email = emailField.value;
+        const birth = birthField.value;
+        const position = positionField.value;
+        const salary = salaryField.value;
+
+        if (!firstName || !lastName || !email || !birth || !position || !salary) {
+            return;
+        }
+
+        clearInputFields();
     }
 
     function clearInputFields() {
