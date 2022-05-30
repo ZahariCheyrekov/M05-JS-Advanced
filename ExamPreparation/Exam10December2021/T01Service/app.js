@@ -11,6 +11,9 @@ function solve() {
     const recievedOrdersSection = document.getElementById('received-orders');
     const completedOrdersSection = document.getElementById('completed-orders');
 
+    const clearBtn = document.querySelector('.clear-btn');
+    clearBtn.addEventListener('click', clearCompletedOrdes);
+
     function sendOrder(ev) {
         ev.preventDefault();
 
@@ -64,6 +67,14 @@ function solve() {
         recievedOrdersSection.appendChild(container);
 
         clearInputFields();
+    }
+
+    function clearCompletedOrdes() {
+        const orders = document.querySelectorAll('#completed-orders div');
+
+        for (const order of orders) {
+            completedOrdersSection.removeChild(order);
+        }
     }
 
     function clearInputFields() {
