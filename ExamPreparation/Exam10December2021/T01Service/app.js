@@ -9,6 +9,7 @@ function solve() {
     sendBtn.addEventListener('click', sendOrder);
 
     const recievedOrdersSection = document.getElementById('received-orders');
+    const completedOrdersSection = document.getElementById('completed-orders');
 
     function sendOrder(ev) {
         ev.preventDefault();
@@ -46,6 +47,13 @@ function solve() {
         finishRepairBtn.textContent = 'Finish repair';
         finishRepairBtn.disabled = true;
         finishRepairBtn.classList.add('finish-btn');
+        finishRepairBtn.addEventListener('click', () => {
+            container.removeChild(startRepairBtn);
+            container.removeChild(finishRepairBtn);
+
+            recievedOrdersSection.removeChild(container);
+            completedOrdersSection.appendChild(container);
+        });
 
         container.appendChild(productTypeRepair);
         container.appendChild(clientInformation);
