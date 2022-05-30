@@ -43,6 +43,10 @@ describe('RentCar Tests', () => {
             assert.equal(expectedMessage, actualMessage);
         });
 
-        
+        it('should return that the user need a bigger budget', () => {
+            const expectedMessage = 'You need a bigger budget!';
+            const actualMessage = rentCar.checkBudget(10, 12, 100);
+            assert.equal(expectedMessage, actualMessage);
+        });
     });
 });
