@@ -18,4 +18,8 @@ class LibraryCollection {
         this.books.push(book);
         return `The ${bookName}, with an author ${bookAuthor}, collect.`;
     }
+
+    findBookByName(name) {
+        return this.books.find(b => b.bookName == name);
+    }
 }
