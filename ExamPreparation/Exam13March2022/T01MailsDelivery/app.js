@@ -80,6 +80,26 @@ function solve() {
 
             sendMails.appendChild(elementToRemove);
         });
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.addEventListener('click', (ev) => {
+            elementToRemove = ev.target.parentElement.parentElement;
+            deletedMails.appendChild(elementToRemove);
+
+            const title = document.createElement('span');
+            title.textContent = `Title: ${titleContent}`;
+
+            const recipient = document.createElement('span');
+            recipient.textContent = `To: ${recipentContent}`;
+
+            liEl.removeChild(titleEl);
+            liEl.removeChild(recipentName);
+            liEl.removeChild(messageEl);
+            liEl.removeChild(divEl);
+
+            liEl.appendChild(recipient);
+            liEl.appendChild(title);
+        });
     }
 
     function resetFieldValues() {
