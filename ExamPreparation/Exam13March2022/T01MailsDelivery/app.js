@@ -14,6 +14,12 @@ function solve() {
 
     addBtn.addEventListener('click', deliverMail);
     resetBtn.addEventListener('click', resetFieldValues);
+
+    function resetFieldValues() {
+        recipentField.value = '';
+        titleField.value = '';
+        messageField.value = '';
+    }
 }
 
 solve();
