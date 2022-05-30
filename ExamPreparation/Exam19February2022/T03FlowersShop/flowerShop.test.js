@@ -1,7 +1,6 @@
 const { assert, expect } = require('chai');
 const flowerShop = require('./flowerShop');
 
-
 describe('FlowerShop tests', () => {
     describe('Tests should check calcPriceOfFlowers function', () => {
         it('should throw error for wrong type of flower value', () => {
@@ -9,11 +8,11 @@ describe('FlowerShop tests', () => {
         });
 
         it('should throw error for wrong type of price value', () => {
-            expect(() => flowerShop.calcPriceOfFlowers('rose', 'invalid', 10)).to.throw(Error);
+            expect(() => flowerShop.calcPriceOfFlowers('Rose', 'invalid', 10)).to.throw(Error);
         });
 
         it('should throw error for wrong type of quantity value', () => {
-            expect(() => flowerShop.calcPriceOfFlowers('rose', 10, 'invalid')).to.throw(Error);
+            expect(() => flowerShop.calcPriceOfFlowers('Rose', 10, 'invalid')).to.throw(Error);
         });
 
         it('should throw error for wrong type of flower and price values', () => {
@@ -25,7 +24,7 @@ describe('FlowerShop tests', () => {
         });
 
         it('should throw error for wrong type of price and quantity values', () => {
-            expect(() => flowerShop.calcPriceOfFlowers('rose', 'invalid', 'invalid')).to.throw(Error);
+            expect(() => flowerShop.calcPriceOfFlowers('Rose', 'invalid', 'invalid')).to.throw(Error);
         });
 
         it('should throw error for wrong input values type', () => {
@@ -33,9 +32,25 @@ describe('FlowerShop tests', () => {
         });
 
         it('should return message with calculated price for the given flower', () => {
-            const expectedMessage = 'You need $50.00 to buy rose!'
-            const actualMessage = flowerShop.calcPriceOfFlowers('rose', 5, 10);
+            const expectedMessage = 'You need $50.00 to buy Rose!'
+            const actualMessage = flowerShop.calcPriceOfFlowers('Rose', 5, 10);
             assert.equal(expectedMessage, actualMessage);
         });
     });
+
+    describe('Tests should check flowers availableness', () => {
+        it('should return that flowers are sold and they are not in the array', () => {
+            const expectedMessage = 'The Rose are sold! You need to purchase more!';
+            const actualMessage = flowerShop.checkFlowersAvailable('Rose', ['Sunflower', 'Sunflower']);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should return that flowers are available and they are in the array', () => {
+            const expectedMessage = 'The Rose are available!';
+            const actualMessage = flowerShop.checkFlowersAvailable('Rose', ['Rose', 'Sunflower']);
+            assert.equal(expectedMessage, actualMessage);
+        });
+    });
+
+
 });
