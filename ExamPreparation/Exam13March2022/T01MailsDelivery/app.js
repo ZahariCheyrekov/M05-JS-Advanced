@@ -24,6 +24,24 @@ function solve() {
         if (!recipentContent || !titleContent || !messageContent) {
             return;
         }
+
+        const liEl = document.createElement('li');
+        const titleEl = document.createElement('h4');
+        titleEl.textContent = `Title: ${titleContent}`;
+
+        const recipentName = document.createElement('h4');
+        recipentName.textContent = `Recipient Name: ${recipentContent}`;
+
+        const messageEl = document.createElement('span');
+        messageEl.textContent = messageContent;
+
+        const divEl = document.createElement('div');
+        divEl.id = 'list-action';
+
+        const submitBtn = document.createElement('button');
+        submitBtn.type = 'submit';
+        submitBtn.id = 'send';
+        submitBtn.textContent = 'Send';
     }
 
     function resetFieldValues() {
