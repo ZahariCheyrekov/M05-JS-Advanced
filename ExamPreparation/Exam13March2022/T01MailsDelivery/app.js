@@ -21,6 +21,9 @@ function solve() {
         const messageContent = messageField.value;
         let elementToRemove = null;
 
+        if (!recipentContent || !titleContent || !messageContent) {
+            return;
+        }
     }
 
     function resetFieldValues() {
