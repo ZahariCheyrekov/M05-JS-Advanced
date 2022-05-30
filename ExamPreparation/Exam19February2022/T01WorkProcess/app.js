@@ -10,6 +10,7 @@ function solve() {
     hireWorkerBtn.addEventListener('click', hireWorker);
 
     const tbody = document.getElementById('tbody');
+    const totalBudget = document.getElementById('sum');
 
     function hireWorker() {
         const firstName = firstNameField.value
@@ -50,6 +51,20 @@ function solve() {
         const editButton = document.createElement('button');
         editButton.textContent = 'Edit';
         editButton.classList.add('Edit');
+        editButton.addEventListener('click', () => {
+            firstNameField.value = firstName;
+            lastNameField.value = lastName;
+            emailField.value = email;
+            birthField.value = birth;
+            positionField.value = position;
+            salaryField.value = salary;
+
+            tbody.removeChild(tr);
+
+            let currentBudget = Number(totalBudget.textContent);
+            currentBudget -= Number(salary);
+            totalBudget.textContent = currentBudget.toFixed(2);
+        });
 
         trButtons.appendChild(firedButton);
         trButtons.appendChild(editButton);
@@ -63,6 +78,10 @@ function solve() {
         tr.appendChild(trButtons);
 
         tbody.appendChild(tr);
+
+        let currentBudget = Number(totalBudget.textContent);
+        currentBudget += Number(salary);
+        totalBudget.textContent = currentBudget.toFixed(2);
 
         clearInputFields();
     }
