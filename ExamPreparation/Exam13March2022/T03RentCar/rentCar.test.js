@@ -91,6 +91,13 @@ describe('RentCar Tests', () => {
             expect(() => rentCar.searchCar([], 'Audi')).to.throw(Error);
         });
 
-        
+        it('should return count of the cars with a given model', () => {
+            const expectedMessage = 'There is 2 car of model Lamborghini in the catalog!'
+            const actualMessage = 
+            rentCar.searchCar(['Audi', 'BMW', 'Volkswagen', 'Lamborghini', 'Lamborghini'],
+                'Lamborghini');
+
+            assert.equal(expectedMessage, actualMessage);
+        });
     });
 });
