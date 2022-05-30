@@ -37,7 +37,10 @@ function solve() {
         const startRepairBtn = document.createElement('button');
         startRepairBtn.textContent = 'Start repair';
         startRepairBtn.classList.add('start-btn');
-       
+        startRepairBtn.addEventListener('click', () => {
+            startRepairBtn.disabled = true;
+            finishRepairBtn.disabled = false;
+        });
 
         const finishRepairBtn = document.createElement('button');
         finishRepairBtn.textContent = 'Finish repair';
