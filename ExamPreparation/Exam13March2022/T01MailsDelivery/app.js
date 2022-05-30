@@ -100,6 +100,22 @@ function solve() {
             liEl.appendChild(recipient);
             liEl.appendChild(title);
         });
+
+        deleteBtn.type = 'submit';
+        deleteBtn.id = 'delete';
+        deleteBtn.textContent = 'Delete';
+
+        divEl.appendChild(submitBtn);
+        divEl.appendChild(deleteBtn);
+
+        liEl.appendChild(titleEl);
+        liEl.appendChild(recipentName);
+        liEl.appendChild(messageEl);
+        liEl.appendChild(divEl);
+
+        listOfMails.appendChild(liEl);
+
+        resetFieldValues();
     }
 
     function resetFieldValues() {
