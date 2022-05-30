@@ -6,7 +6,11 @@ function solve() {
     const positionField = document.getElementById('position');
     const salaryField = document.getElementById('salary');
     const hireWorkerBtn = document.getElementById('add-worker');
-    
+    hireWorkerBtn.type = 'button';
+    hireWorkerBtn.addEventListener('click', hireWorker);
+
+    function hireWorker() {
+    }
 }
 
 solve();
