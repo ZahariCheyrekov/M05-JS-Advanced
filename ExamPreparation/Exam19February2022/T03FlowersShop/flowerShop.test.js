@@ -31,5 +31,11 @@ describe('FlowerShop tests', () => {
         it('should throw error for wrong input values type', () => {
             expect(() => flowerShop.calcPriceOfFlowers(10, 'invalid', 'invalid')).to.throw(Error);
         });
+
+        it('should return message with calculated price for the given flower', () => {
+            const expectedMessage = 'You need $50.00 to buy rose!'
+            const actualMessage = flowerShop.calcPriceOfFlowers('rose', 5, 10);
+            assert.equal(expectedMessage, actualMessage);
+        });
     });
 });
