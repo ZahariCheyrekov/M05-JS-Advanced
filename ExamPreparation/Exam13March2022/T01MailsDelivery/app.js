@@ -16,7 +16,11 @@ function solve() {
     resetBtn.addEventListener('click', resetFieldValues);
 
     function deliverMail() {
-        
+        const recipentContent = recipentField.value;
+        const titleContent = titleField.value;
+        const messageContent = messageField.value;
+        let elementToRemove = null;
+
     }
 
     function resetFieldValues() {
