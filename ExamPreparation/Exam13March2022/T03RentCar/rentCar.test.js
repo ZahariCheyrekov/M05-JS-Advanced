@@ -67,6 +67,10 @@ describe('RentCar Tests', () => {
             expect(() => rentCar.calculatePriceOfCar('Lambo', 10)).to.throw(Error);
         });
 
-       
+        it('should calculate the price for the rent of the car correctly', () => {
+            const expectedMessage = 'You choose Audi and it will cost $360!';
+            const actualMessage = rentCar.calculatePriceOfCar('Audi', 10);
+            assert.equal(expectedMessage, actualMessage);
+        });
     });
 });
