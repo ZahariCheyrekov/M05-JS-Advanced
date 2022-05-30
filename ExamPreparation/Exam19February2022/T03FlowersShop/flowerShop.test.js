@@ -76,5 +76,11 @@ describe('FlowerShop tests', () => {
         it('should trow error for invalid space equal to the gardenArr length', () => {
             expect(() => flowerShop.sellFlowers(['Rose'], 1)).to.throw(Error);
         });
-    })
+
+        it('should add flowers to an array while i is different than space', () => {
+            const expectedShop = 'Rose / Rose / Rose / Rose';
+            const actualShop = flowerShop.sellFlowers(['Rose', 'Rose', 'Rose', 'Sunflower', 'Rose'], 3);
+            assert.equal(expectedShop, actualShop);
+        });
+    });
 });
