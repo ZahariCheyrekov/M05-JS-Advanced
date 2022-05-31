@@ -19,13 +19,14 @@ const cinema = {
             let price = schedule[projectionType];
             return price;
         } else {
-            throw new Error('Invalid projection type.')
+            throw new Error('Invalid projection type.');
         }
     },
 
     swapSeatsInHall: function (firstPlace, secondPlace) {
         if (!Number.isInteger(firstPlace) || firstPlace <= 0 || firstPlace > 20 ||
-            !Number.isInteger(secondPlace) || secondPlace <= 0 || secondPlace > 20 || firstPlace === secondPlace) {
+            !Number.isInteger(secondPlace) || secondPlace <= 0 || secondPlace > 20 ||
+            firstPlace === secondPlace) {
             return "Unsuccessful change of seats in the hall.";
         } else {
             return "Successful change of seats in the hall.";
