@@ -110,7 +110,12 @@ describe('Cinema Tests', () => {
         });
 
         it('should return that the first value is floating point number', () => {
-            const actualMessage = cinema.swapSeatsInHall(5.342452,10);
+            const actualMessage = cinema.swapSeatsInHall(5.342452, 10);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should return that the second value is floating point number', () => {
+            const actualMessage = cinema.swapSeatsInHall(10, 5.342452);
             assert.equal(expectedMessage, actualMessage);
         });
 
