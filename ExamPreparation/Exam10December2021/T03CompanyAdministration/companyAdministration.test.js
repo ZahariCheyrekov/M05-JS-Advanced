@@ -93,6 +93,10 @@ describe('CompanyAdministration Tests', () => {
             expect(() => companyAdministration.firedEmployee(['John'], -10)).to.throw(Error);
         });
 
+        it('should throw error for invalid index with value floating point number', () => {
+            expect(() => companyAdministration.firedEmployee(['John'], 5.56789)).to.throw(Error);
+        });
+
         it('should throw error for invalid index with value bigger than the array length', () => {
             expect(() => companyAdministration.firedEmployee(['John'], 10)).to.throw(Error);
         });
