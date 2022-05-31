@@ -34,5 +34,14 @@ class SummerCamp {
         return `The ${name} was successfully registered.`;
     }
 
+    unregisterParticipant(name) {
+        if (!this.listOfParticipants.some(x => x.name == name)) {
+            throw new Error(`The ${name} is not registered in the camp.`);
+        }
+
+        this.listOfParticipants = this.listOfParticipants.filter(x => x.name != name);
+        return `The ${name} removed successfully.`;
+    }
+
     
 }
