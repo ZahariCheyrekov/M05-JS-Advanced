@@ -39,4 +39,22 @@ describe('Cinema Tests', () => {
             assert.equal(expectedPrice, actualPrice);
         });
     });
+
+    describe('Tests should check swapSeatsInHall function', () => {
+        const expectedMessage = 'Unsuccessful change of seats in the hall.';
+        // swapSeatsInHall: function (firstPlace, secondPlace) {
+        //     if (!Number.isInteger(firstPlace) || firstPlace <= 0 || firstPlace > 20 ||
+        //         !Number.isInteger(secondPlace) || secondPlace <= 0 || secondPlace > 20 ||
+        //         firstPlace === secondPlace) {
+        //         return "Unsuccessful change of seats in the hall.";
+        //     } else {
+        //         return "Successful change of seats in the hall.";
+        //     }
+        // }
+
+        it('should return that the swap was unsuccessful for invalid first value', () => {
+            const actualMessage = cinema.swapSeatsInHall('invalid', 10);
+            assert.equal(expectedMessage, actualMessage);
+        });
+    });
 });
