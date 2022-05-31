@@ -109,6 +109,11 @@ describe('Cinema Tests', () => {
             assert.equal(expectedMessage, actualMessage);
         });
 
+        it('should return that the values do not exist', () => {
+            const actualMessage = cinema.swapSeatsInHall();
+            assert.equal(expectedMessage, actualMessage);
+        });
+
         it('should return that the first value is floating point number', () => {
             const actualMessage = cinema.swapSeatsInHall(5.342452, 10);
             assert.equal(expectedMessage, actualMessage);
