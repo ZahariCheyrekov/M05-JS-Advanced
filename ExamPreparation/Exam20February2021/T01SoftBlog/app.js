@@ -7,6 +7,7 @@ function solve() {
    createBtn.addEventListener('click', addArticle);
 
    const articlesSection = document.querySelector('.site-content main section');
+   const archive = document.querySelector('.archive-section ol');
 
    function addArticle(ev) {
       ev.preventDefault();
@@ -34,12 +35,27 @@ function solve() {
       divBtns.classList.add('buttons');
 
       const deleteBtn = document.createElement('button');
-      deleteBtn.classList.add('btn delete');
+      deleteBtn.classList.add('btn');
+      deleteBtn.classList.add('delete');
       deleteBtn.textContent = 'Delete';
 
       const archiveBtn = document.createElement('button');
-      archiveBtn.classList.add('btn archive');
+      archiveBtn.classList.add('btn');
+      archiveBtn.classList.add('archive');
       archiveBtn.textContent = 'Archive';
+      
+
+      article.appendChild(title);
+      category.appendChild(categoryType);
+      article.appendChild(category);
+      creator.appendChild(creatorName);
+      article.appendChild(creator);
+      article.appendChild(content);
+      divBtns.appendChild(deleteBtn);
+      divBtns.appendChild(archiveBtn);
+      article.appendChild(divBtns);
+
+      articlesSection.appendChild(article);
 
       clearInputFields();
    }
