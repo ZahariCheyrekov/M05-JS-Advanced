@@ -21,5 +21,12 @@ describe('Cinema Tests', () => {
             expect(() => cinema.ticketPrice('invalid')).to.throw(Error);
         });
 
+        it('should return price for projection type Premiere', () => {
+            const expectedPrice = 12.00;
+            const actualPrice = cinema.ticketPrice('Premiere');
+            assert.equal(expectedPrice, actualPrice);
+        });
+
+     
     });
 });
