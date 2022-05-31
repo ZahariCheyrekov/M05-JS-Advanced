@@ -49,7 +49,23 @@ function solve() {
       archiveBtn.classList.add('btn');
       archiveBtn.classList.add('archive');
       archiveBtn.textContent = 'Archive';
-     
+      archiveBtn.addEventListener('click', (ev) => {
+         archivedLiEl.push(title.textContent);
+         archivedLiEl.sort((a, b) => a.localeCompare(b));
+
+         const childs = Array.from(archive.childNodes);
+         for (const child of childs) {
+            archive.removeChild(child);
+         }
+
+         for (const el of archivedLiEl) {
+            const liEl = document.createElement('li');
+            liEl.textContent = el;
+            archive.appendChild(liEl);
+         }
+
+         ev.target.parentElement.parentElement.parentElement.removeChild(article);
+      });
 
       article.appendChild(title);
       category.appendChild(categoryType);
