@@ -9,6 +9,7 @@ function solve() {
     addBtn.addEventListener('click', addSong);
 
     const allHitsSection = document.querySelector('.all-hits-container');
+    const saveSongsContainer = document.querySelector('.saved-container');
     const totalLikes = document.querySelector('div.likes p');
 
     function addSong(ev) {
@@ -46,6 +47,12 @@ function solve() {
         const saveBtn = document.createElement('button');
         saveBtn.classList.add('save-btn');
         saveBtn.textContent = 'Save song';
+        saveBtn.addEventListener('click', () => {
+            divHitsInfo.removeChild(likeSong);
+            divHitsInfo.removeChild(saveBtn);
+            allHitsSection.removeChild(divHitsInfo);
+            saveSongsContainer.appendChild(divHitsInfo);
+        });
 
         const likeSong = document.createElement('button');
         likeSong.classList.add('like-btn');
@@ -59,6 +66,7 @@ function solve() {
         const deleteSong = document.createElement('button');
         deleteSong.classList.add('delete-btn');
         deleteSong.textContent = 'Delete';
+       
 
         divHitsInfo.appendChild(imgSong);
         divHitsInfo.appendChild(genreSong);
