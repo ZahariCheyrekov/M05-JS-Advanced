@@ -10,6 +10,25 @@ class ArtGallery {
         this.guests = [];
     }
 
+    inviteGuest(guestName, personality) {
+        const existingGuest = this.findGuestByName(guestName);
+
+        if (existingGuest) {
+            throw new Error(`${guestName} has already been invited.`);
+        }
+
+        const guest = {
+            guestName,
+            points: this.getPointsPerPersonality(personality),
+            purchaseArticle: 0,
+        };
+
+        this.guests.push(guest);
+        return `You have successfully invited ${guestName}!`;
+    }
+
+
+
     addArticle(articleModel, articleName, quantity) {
         const articleByModel = findArticleByModel(articleModel);
 
@@ -26,9 +45,7 @@ class ArtGallery {
                 articleName,
                 quantity
             }
-
             this.listOfArticles.push(article);
-
         } else {
             existingArticle.quantity += quantity;
         }
