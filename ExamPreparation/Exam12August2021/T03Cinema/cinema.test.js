@@ -18,6 +18,10 @@ describe('Cinema Tests', () => {
             assert.equal(expectedMessage, actualMessage);
         });
 
-       
+        it('should return the given movies from the array', () => {
+            const expectedMessage = 'partOne, partTwo';
+            const actualMessage = cinema.showMovies(['partOne', 'partTwo']);
+            assert.equal(expectedMessage, actualMessage);
+        });
     });
 });
