@@ -51,4 +51,32 @@ describe('Library Tests', () => {
             assert.equal(expectedMessage, actualMessage);
         });
     });
+
+    describe('Tests should check arrangeTheBooks function', () => {
+        it('should throw error for countBooks value not a number', () => {
+            expect(() => library.arrangeTheBooks('invalid')).to.throw(Error);
+        });
+
+        it('should throw error for countBooks value less than zero', () => {
+            expect(() => library.arrangeTheBooks(-10)).to.throw(Error);
+        });
+
+        it('shold return that the books were arranged for equal availableSpace and countBooks', () => {
+            const expectedMessage = 'Great job, the books are arranged.';
+            const actualMessage = library.arrangeTheBooks(40);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('shold return that the books were arranged for more availableSpace than countBooks', () => {
+            const expectedMessage = 'Great job, the books are arranged.';
+            const actualMessage = library.arrangeTheBooks(10);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should return that more shelves need to be purchased', () => {
+            const expectedMessage = 'Insufficient space, more shelves need to be purchased.';
+            const actualMessage = library.arrangeTheBooks(100);
+            assert.equal(expectedMessage, actualMessage);
+        });
+    });
 });
