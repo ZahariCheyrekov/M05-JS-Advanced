@@ -47,7 +47,15 @@ function solve() {
         const productYear = document.createElement('td');
         const productDescription = document.createElement('td');
 
-        
+        moreBtn.addEventListener('click', (e) => {
+            if (e.currentTarget.textContent == 'More Info') {
+                productInfo.style.display = 'contents';
+                e.currentTarget.textContent = 'Less Info'
+            } else {
+                productInfo.style.display = 'none';
+                e.currentTarget.textContent = 'More Info'
+            }
+        });
 
         productYear.textContent = `Year: ${yearField.value}`;
         productDescription.setAttribute('colspan', 3);
@@ -60,7 +68,7 @@ function solve() {
         buyBtn.textContent = 'Buy it';
         buyBtn.classList.add('buyBtn');
 
-        
+       
 
         const buttons = document.createElement('td');
         buttons.appendChild(moreBtn);
