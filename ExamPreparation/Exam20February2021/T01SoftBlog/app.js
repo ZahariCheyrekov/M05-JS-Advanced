@@ -9,6 +9,8 @@ function solve() {
    const articlesSection = document.querySelector('.site-content main section');
    const archive = document.querySelector('.archive-section ol');
 
+   let archivedLiEl = [];
+
    function addArticle(ev) {
       ev.preventDefault();
 
@@ -38,17 +40,16 @@ function solve() {
       deleteBtn.classList.add('btn');
       deleteBtn.classList.add('delete');
       deleteBtn.textContent = 'Delete';
+      deleteBtn.addEventListener('click', (ev) => {
+         ev.target.parentElement.parentElement.parentElement.removeChild(article);
+         document.querySelector('.site-content').removeChild(document.querySelector('.site-content aside'));
+      });
 
       const archiveBtn = document.createElement('button');
       archiveBtn.classList.add('btn');
       archiveBtn.classList.add('archive');
       archiveBtn.textContent = 'Archive';
-      archiveBtn.addEventListener('click', (ev) => {
-         const liEl = document.createElement('li');
-         liEl.textContent = title.textContent;
-         archive.appendChild(liEl);
-         ev.target.parentElement.parentElement.parentElement.removeChild(article);
-      });
+     
 
       article.appendChild(title);
       category.appendChild(categoryType);
