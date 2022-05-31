@@ -81,5 +81,16 @@ class SummerCamp {
         }
     }
 
-    
+    toString() {
+        let result = [];
+        result.push(`${this.organizer} will take ${this.listOfParticipants.length} participants on camping to ${this.location}`);
+
+        this.listOfParticipants
+            .sort((a, b) => b.wins - a.wins)
+            .forEach(p => {
+                result.push(`${p.name} - ${p.condition} - ${p.power} - ${p.wins}`);
+            });
+
+        return result.join('\n');
+    }
 }
