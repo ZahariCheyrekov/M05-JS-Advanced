@@ -21,7 +21,7 @@ const cinema = {
         } else {
             throw new Error('Invalid projection type.');
         }
-    },
+    }, 
 
     swapSeatsInHall: function (firstPlace, secondPlace) {
         if (!Number.isInteger(firstPlace) || firstPlace <= 0 || firstPlace > 20 ||
