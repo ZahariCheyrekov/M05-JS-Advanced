@@ -54,7 +54,7 @@ class ArtGallery {
     buyArticle(articleModel, articleName, guestName) {
         const article = this.findArticleByName(articleName);
         if (!article || article.model != articleModel) {
-            throw new Error('This article is not found!');
+            throw new Error('This article is not found.');
         }
 
         if (article.quantity == 0) {
@@ -84,7 +84,7 @@ class ArtGallery {
 
         if (criteria == 'article') {
             info.push('Articles information:');
-            this.listOfArticles.forEach(a => info.push(`${a.articleModel} - ${a.articleName} - ${a.quantity}`));
+            this.listOfArticles.forEach(a => info.push(`${a.model} - ${a.articleName} - ${a.quantity}`));
 
         } else if (criteria == 'guest') {
             info.push('Guests information:');
