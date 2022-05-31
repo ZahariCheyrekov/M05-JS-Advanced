@@ -12,6 +12,7 @@ function solution() {
   const ulList = document.getElementById('infoPreview');
   const editBtn = document.getElementById('editBTN');
   const continueBtn = document.getElementById('continueBTN');
+  continueBtn.addEventListener('click', removeDivContent);
 
   function submitReservation() {
     const nameContent = fullNameField.value;
@@ -68,6 +69,19 @@ function solution() {
     });
 
     clearInputFields();
+  }
+
+  function removeDivContent() {
+    const divBlock = document.getElementById('block');
+    const childs = [...document.getElementById('block').childNodes];
+
+    for (const child of childs) {
+      divBlock.removeChild(child);
+    }
+
+    const message = document.createElement('h3');
+    message.textContent = 'Thank you for your Reservation!';
+    divBlock.appendChild(message);
   }
 
   function clearInputFields() {
