@@ -19,5 +19,14 @@ function solve() {
         if (!genreContent || !nameContent || !authorContent || !dateContent) {
             return;
         }
+
+        clearInputFields();
+    }
+
+    function clearInputFields() {
+        genreField.value = '';
+        nameField.value = '';
+        authorField.value = '';
+        dateField.value = '';
     }
 }
