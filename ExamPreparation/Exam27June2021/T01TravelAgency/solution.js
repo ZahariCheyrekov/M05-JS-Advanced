@@ -28,6 +28,21 @@ function solution() {
     editBtn.disabled = false;
     continueBtn.disabled = false;
 
+    const nameEl = document.createElement('li');
+    nameEl.textContent = `Full Name: ${nameContent}`;
+
+    const emailEl = document.createElement('li');
+    emailEl.textContent = `Email: ${emailContent}`;
+
+    const phoneEl = document.createElement('li');
+    phoneEl.textContent = `Phone Number: ${phoneContent}`;
+
+    const addressEl = document.createElement('li');
+    addressEl.textContent = `Adress: ${addressContent}`;
+
+    const codeEl = document.createElement('li');
+    codeEl.textContent = `Postal Code: ${codeContent}`;
+
     clearInputFields();
   }
 
