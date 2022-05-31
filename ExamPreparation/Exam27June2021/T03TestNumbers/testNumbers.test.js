@@ -21,4 +21,30 @@ describe('TestNumbers Tests', () => {
             expect(testNumbers.sumNumbers(2, -4)).to.equal('-2.00');
         });
     });
+
+    describe('Tests should check numberChecker function', () => {
+        it('should return correct answer with odd value', () => {
+            expect(testNumbers.numberChecker(1)).to.contain('odd');
+        });
+
+        it('should return correct answer with even value', () => {
+            expect(testNumbers.numberChecker(2)).to.contain('even');
+        });
+
+        it('should return correct answer with string even value', () => {
+            expect(testNumbers.numberChecker('2')).to.contain('even');
+        });
+
+        it('should return correct answer with string odd value', () => {
+            expect(testNumbers.numberChecker('1')).to.contain('odd');
+        });
+
+        it('should throw error for not valid input type', () => {
+            expect(() => testNumbers.numberChecker('invalid')).to.throw(Error);
+        });
+
+        it('should throw error for not valid input type of NaN', () => {
+            expect(() => testNumbers.numberChecker(NaN)).to.throw(Error);
+        });
+    });
 });
