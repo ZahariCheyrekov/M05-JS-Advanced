@@ -66,7 +66,9 @@ function solve() {
         const deleteSong = document.createElement('button');
         deleteSong.classList.add('delete-btn');
         deleteSong.textContent = 'Delete';
-       
+        deleteSong.addEventListener('click', (ev) => {
+            ev.target.parentElement.parentElement.removeChild(divHitsInfo);
+        });
 
         divHitsInfo.appendChild(imgSong);
         divHitsInfo.appendChild(genreSong);
