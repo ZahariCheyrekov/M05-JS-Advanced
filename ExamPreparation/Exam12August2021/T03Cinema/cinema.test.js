@@ -106,5 +106,11 @@ describe('Cinema Tests', () => {
             const actualMessage = cinema.swapSeatsInHall(25, 25);
             assert.equal(expectedMessage, actualMessage);
         });
+
+        it('should return that chage of seats in hall was successful', () => {
+            const expectedMessage = 'Successful change of seats in the hall.';
+            const actualMessage = cinema.swapSeatsInHall(9, 10);
+            assert.equal(expectedMessage, actualMessage);
+        });
     });
 });
