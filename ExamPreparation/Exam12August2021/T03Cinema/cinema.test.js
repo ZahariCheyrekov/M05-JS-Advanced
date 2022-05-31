@@ -33,6 +33,10 @@ describe('Cinema Tests', () => {
             assert.equal(expectedPrice, actualPrice);
         });
 
-    
+        it('should return price for projection type Discount', () => {
+            const expectedPrice = 5.50;
+            const actualPrice = cinema.ticketPrice('Discount');
+            assert.equal(expectedPrice, actualPrice);
+        });
     });
 });
