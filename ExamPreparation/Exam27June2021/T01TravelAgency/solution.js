@@ -43,13 +43,30 @@ function solution() {
     const codeEl = document.createElement('li');
     codeEl.textContent = `Postal Code: ${codeContent}`;
 
-
     ulList.appendChild(nameEl);
     ulList.appendChild(emailEl);
     ulList.appendChild(phoneEl);
     ulList.appendChild(addressEl);
     ulList.appendChild(codeEl);
-    
+
+    editBtn.addEventListener('click', () => {
+      editBtn.disabled = true;
+      continueBtn.disabled = true;
+      submitBtn.disabled = false;
+
+      fullNameField.value = nameContent;
+      emailField.value = emailContent;
+      numberField.value = phoneContent;
+      adressField.value = addressContent;
+      codeField.value = codeContent;
+
+      ulList.removeChild(nameEl);
+      ulList.removeChild(emailEl);
+      ulList.removeChild(phoneEl);
+      ulList.removeChild(addressEl);
+      ulList.removeChild(codeEl);
+    });
+
     clearInputFields();
   }
 
