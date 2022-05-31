@@ -33,4 +33,22 @@ describe('Library Tests', () => {
             assert.equal(expectedMessage, actualMessage);
         });
     });
+
+    describe('Test should check findBook function', () => {
+        it('should throw error for no books currently available', () => {
+            expect(() => library.findBook([], 'Elon Musk')).to.throw(Error);
+        });
+
+        it('should return that the desired book wass found', () => {
+            const expectedMessage = 'We found the book you want.';
+            const actualMessage = library.findBook(['Elon Musk', 'SomethingElse', 'ThatBook'], 'Elon Musk');
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should return taht the desired book wasn\'t found', () => {
+            const expectedMessage = 'The book you are looking for is not here!';
+            const actualMessage = library.findBook(['Steve Jobs', 'SomethingElse', 'ThatBook'], 'Elon Musk');
+            assert.equal(expectedMessage, actualMessage);
+        });
+    });
 });
