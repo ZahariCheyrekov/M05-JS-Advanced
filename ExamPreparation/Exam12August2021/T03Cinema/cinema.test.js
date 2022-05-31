@@ -27,6 +27,12 @@ describe('Cinema Tests', () => {
             assert.equal(expectedPrice, actualPrice);
         });
 
-     
+        it('should return price for projection type Normal', () => {
+            const expectedPrice = 7.50;
+            const actualPrice = cinema.ticketPrice('Normal');
+            assert.equal(expectedPrice, actualPrice);
+        });
+
+    
     });
 });
