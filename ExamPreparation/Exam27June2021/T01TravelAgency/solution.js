@@ -1,5 +1,9 @@
 window.addEventListener('load', solution);
 
 function solution() {
-  console.log('TODO: Write the missing functionality!');
+  const fullNameField = document.getElementById('fname');
+  const emailField = document.getElementById('email');
+  const numberField = document.getElementById('phone');
+  const adressField = document.getElementById('address');
+  const codeField = document.getElementById('code');
 }
