@@ -27,7 +27,14 @@ class ArtGallery {
         return `You have successfully invited ${guestName}!`;
     }
 
+    getPointsPerPersonality(personality) {
+        const values = {
+            Vip: 500,
+            Middle: 250,
+        };
 
+        return values[personality] ? values[personality] : 50;
+    }
 
     addArticle(articleModel, articleName, quantity) {
         const articleByModel = findArticleByModel(articleModel);
