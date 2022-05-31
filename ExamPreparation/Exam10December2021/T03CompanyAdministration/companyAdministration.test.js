@@ -31,6 +31,10 @@ describe('CompanyAdministration Tests', () => {
             expect(() => companyAdministration.calculateSalary('invalid')).to.throw(Error);
         });
 
+        it('should throw error for input value of null', () => {
+            expect(() => companyAdministration.calculateSalary(null)).to.throw(Error);
+        });
+
         it('should throw error for input value of hours less than zero', () => {
             expect(() => companyAdministration.calculateSalary(-10)).to.throw(Error);
         });
@@ -95,6 +99,10 @@ describe('CompanyAdministration Tests', () => {
 
         it('should throw error for invalid index with value equal to the array length', () => {
             expect(() => companyAdministration.firedEmployee(['John'], 1)).to.throw(Error);
+        });
+
+        it('should throw error for invalid index with value NaN', () => {
+            expect(() => companyAdministration.firedEmployee(['John'], NaN)).to.throw(Error);
         });
 
         it('should throw error for only one value given', () => {
