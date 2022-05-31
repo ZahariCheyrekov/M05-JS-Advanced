@@ -9,6 +9,7 @@ function solve() {
     addBtn.addEventListener('click', addSong);
 
     const allHitsSection = document.querySelector('.all-hits-container');
+    const totalLikes = document.querySelector('div.likes p');
 
     function addSong(ev) {
         ev.preventDefault();
@@ -49,6 +50,11 @@ function solve() {
         const likeSong = document.createElement('button');
         likeSong.classList.add('like-btn');
         likeSong.textContent = 'Like song';
+        likeSong.addEventListener('click', () => {
+            likeSong.disabled = true;
+            let currentLikes = Number(totalLikes.textContent.replace(/Total Likes: /g, ''));
+            totalLikes.textContent = `Total Likes: ${Number(currentLikes + 1)}`;
+        });
 
         const deleteSong = document.createElement('button');
         deleteSong.classList.add('delete-btn');
