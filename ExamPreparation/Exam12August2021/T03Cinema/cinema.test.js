@@ -109,6 +109,11 @@ describe('Cinema Tests', () => {
             assert.equal(expectedMessage, actualMessage);
         });
 
+        it('should return that the first value is floating point number', () => {
+            const actualMessage = cinema.swapSeatsInHall(5.342452,10);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
         it('should return that chage of seats in hall was successful', () => {
             const expectedMessage = 'Successful change of seats in the hall.';
             const actualMessage = cinema.swapSeatsInHall(9, 10);
