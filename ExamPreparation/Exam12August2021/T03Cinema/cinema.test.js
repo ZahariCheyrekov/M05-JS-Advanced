@@ -14,12 +14,6 @@ describe('Cinema Tests', () => {
             const actualMessage = cinema.showMovies(['partOne', 'partTwo']);
             assert.equal(expectedMessage, actualMessage);
         });
-
-        it('should return the given movies from the array of one value', () => {
-            const expectedMessage = 'partTwo';
-            const actualMessage = cinema.showMovies(['partTwo']);
-            assert.equal(expectedMessage, actualMessage);
-        });
     });
 
     describe('Tests should check ticketPrice function', () => {
@@ -49,6 +43,30 @@ describe('Cinema Tests', () => {
     describe('Tests should check swapSeatsInHall function', () => {
         const expectedMessage = 'Unsuccessful change of seats in the hall.';
 
+        it('should return that the swap was unsuccessful for invalid first value', () => {
+            const actualMessage = cinema.swapSeatsInHall('invalid', 10);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should return that the swap was unsuccessful for invalid second value', () => {
+            const actualMessage = cinema.swapSeatsInHall(10, 'invalid');
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should return that the swap was unsuccessful for invalid input values', () => {
+            const actualMessage = cinema.swapSeatsInHall('invalid', 'invalid');
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should return that the swap was unsuccessful for first value for -10', () => {
+            const actualMessage = cinema.swapSeatsInHall(-10, 10);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should return that the swap was unsuccessful for second value for -10', () => {
+            const actualMessage = cinema.swapSeatsInHall(10, -10);
+            assert.equal(expectedMessage, actualMessage);
+        });
 
         it('should return that the swap was unsuccessful for first value for 0', () => {
             const actualMessage = cinema.swapSeatsInHall(0, 10);
@@ -75,34 +93,20 @@ describe('Cinema Tests', () => {
             assert.equal(expectedMessage, actualMessage);
         });
 
-        it('should return that the one of the values do not exist', () => {
-            const actualMessage = cinema.swapSeatsInHall(10);
-            assert.equal(expectedMessage, actualMessage);
-        });
-
-        it('should return that the values do not exist', () => {
-            const actualMessage = cinema.swapSeatsInHall();
-            assert.equal(expectedMessage, actualMessage);
-        });
-
-        it('should return that the first value is floating point number', () => {
-            const actualMessage = cinema.swapSeatsInHall(0.342452, 10);
-            assert.equal(expectedMessage, actualMessage);
-        });
-
-        it('should return that the first value is floating point number', () => {
-            const actualMessage = cinema.swapSeatsInHall(10, -5.342452);
-            assert.equal(expectedMessage, actualMessage);
-        });
-
-        it('should return that the first value is floating point number', () => {
-            const actualMessage = cinema.swapSeatsInHall(-5.342452, 0.342452);
+        it('should return that the swap was unsuccessful for values of 25', () => {
+            const actualMessage = cinema.swapSeatsInHall(25, 25);
             assert.equal(expectedMessage, actualMessage);
         });
 
         it('should return that chage of seats in hall was successful', () => {
             const expectedMessage = 'Successful change of seats in the hall.';
             const actualMessage = cinema.swapSeatsInHall(9, 10);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should return that chage of seats in hall was successful', () => {
+            const expectedMessage = 'Successful change of seats in the hall.';
+            const actualMessage = cinema.swapSeatsInHall(1, 20);
             assert.equal(expectedMessage, actualMessage);
         });
     });
