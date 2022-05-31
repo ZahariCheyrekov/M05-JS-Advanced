@@ -29,6 +29,12 @@ function solution() {
     editBtn.disabled = false;
     continueBtn.disabled = false;
 
+    fullNameField.disabled = true;
+    emailField.disabled = true;
+    numberField.disabled = true;
+    adressField.disabled = true;
+    codeField.disabled = true;
+
     const nameEl = document.createElement('li');
     nameEl.textContent = `Full Name: ${nameContent}`;
 
@@ -39,7 +45,7 @@ function solution() {
     phoneEl.textContent = `Phone Number: ${phoneContent}`;
 
     const addressEl = document.createElement('li');
-    addressEl.textContent = `Adress: ${addressContent}`;
+    addressEl.textContent = `Address: ${addressContent}`;
 
     const codeEl = document.createElement('li');
     codeEl.textContent = `Postal Code: ${codeContent}`;
@@ -54,6 +60,12 @@ function solution() {
       editBtn.disabled = true;
       continueBtn.disabled = true;
       submitBtn.disabled = false;
+
+      fullNameField.disabled = false;
+      emailField.disabled = false;
+      numberField.disabled = false;
+      adressField.disabled = false;
+      codeField.disabled = false;
 
       fullNameField.value = nameContent;
       emailField.value = emailContent;
@@ -73,14 +85,14 @@ function solution() {
 
   function removeDivContent() {
     const divBlock = document.getElementById('block');
-    const childs = [...document.getElementById('block').childNodes];
+    const childs = Array.from(document.getElementById('block').childNodes);
 
     for (const child of childs) {
       divBlock.removeChild(child);
     }
 
     const message = document.createElement('h3');
-    message.textContent = 'Thank you for your Reservation!';
+    message.textContent = 'Thank you for your reservation!';
     divBlock.appendChild(message);
   }
 
