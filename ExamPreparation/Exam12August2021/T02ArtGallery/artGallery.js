@@ -79,6 +79,21 @@ class ArtGallery {
         return `${guestName} successfully purchased the article worth ${neededPoints} points.`;
     }
 
+    showGalleryInfo(criteria) {
+        let info = [];
+
+        if (criteria == 'article') {
+            info.push('Articles information:');
+            this.listOfArticles.forEach(a => info.push(`${a.articleModel} - ${a.articleName} - ${a.quantity}`));
+
+        } else if (criteria == 'guest') {
+            info.push('Guests information:');
+            this.guests.forEach(g => info.push(`${g.guestName} - ${g.purchaseArticle}`));
+        }
+
+        return info.join('\n');
+    }
+
     getPointsPerPersonality(personality) {
         const values = {
             Vip: 500,
