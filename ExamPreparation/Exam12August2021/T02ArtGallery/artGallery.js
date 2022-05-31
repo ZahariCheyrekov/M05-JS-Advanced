@@ -17,7 +17,7 @@ class ArtGallery {
             throw new Error('This article model is not included in this gallery!');
         }
 
-        const existingArticle = this.listOfArticles.find(a => a.articleName == articleName);
+        const existingArticle = findArticleByName(articleName);
         if (!existingArticle) {
             let model = articleModel.toLowerCase();
 
@@ -36,8 +36,12 @@ class ArtGallery {
         return `Successfully added article ${articleName} with a new quantity- ${quantity}.`;
     }
 
+    findArticleByName(name) {
+        return this.listOfArticles.find(a => a.articleName == name);
+    }
+
     findArticleByModel(model) {
-        return this.possibleArticles[articleModel.toLowerCase()];
+        return this.possibleArticles[model.toLowerCase()];
     }
 
     findGuestByName(name) {
