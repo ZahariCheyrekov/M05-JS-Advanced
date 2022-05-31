@@ -7,6 +7,11 @@ describe('TestNumbers Tests', () => {
             expect(testNumbers.sumNumbers('invalid', 10)).to.be.undefined;
         });
 
+        it('should throw error for invalid second type parameter', () => {
+            expect(testNumbers.sumNumbers(10, 'invalid')).to.be.undefined;
+        });
+
+       
 
                 // sumNumbers: function (num1, num2) {
         //     let sum = 0;
