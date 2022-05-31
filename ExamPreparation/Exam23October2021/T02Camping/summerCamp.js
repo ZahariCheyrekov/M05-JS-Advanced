@@ -10,5 +10,29 @@ class SummerCamp {
         this.listOfParticipants = [];
     }
 
-  
+    registerParticipant(name, condition, money) {
+        if (!this.priceForTheCamp[condition]) {
+            throw new Error('Unsuccessful registration at the camp.');
+        }
+
+        if (this.priceForTheCamp[condition] > money) {
+            return 'The money is not enough to pay the stay at the camp.';
+        }
+
+        if (this.listOfParticipants.some(x => x.name == name)) {
+            return `The ${name} is already registered at the camp.`;
+        }
+
+        let participant = {
+            name,
+            condition,
+            power: 100,
+            wins: 0
+        };
+
+        this.listOfParticipants.push(participant);
+        return `The ${name} was successfully registered.`;
+    }
+
+    
 }
