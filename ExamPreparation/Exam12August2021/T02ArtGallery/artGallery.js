@@ -33,4 +33,10 @@ class ArtGallery {
 
         return `Successfully added article ${articleName} with a new quantity- ${quantity}.`;
     }
+
+  
+
+    findGuestByName(name) {
+        return this.guests.find(g => g.guestName == name);
+    }
 }
