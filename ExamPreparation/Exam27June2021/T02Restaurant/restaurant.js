@@ -55,4 +55,17 @@ class Restaurant {
             return `The ${meal} is already in the our menu, try something different.`;
         }
     }
+
+    showTheMenu() {
+        if (Object.keys(this.menu).length == 0) {
+            return 'Our menu is not ready yet, please come later...';
+        }
+
+        let result = [];
+        for (let meal in this.menu) {
+            result.push(`${meal} - $ ${this.menu[meal].price}`);
+        }
+
+        return result.join('\n');
+    }
 }
