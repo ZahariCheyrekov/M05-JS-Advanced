@@ -11,7 +11,15 @@ function solve() {
 
     addButton.addEventListener('click', onClick);
 
-    
+    function onClick(e) {
+        e.preventDefault();
+
+        const year = Number(yearField.value);
+        const price = Number(priceField.value);
+
+       
+        clearInputFields();
+    }
 
     function clearInputFields() {
         modelField.value = '';
