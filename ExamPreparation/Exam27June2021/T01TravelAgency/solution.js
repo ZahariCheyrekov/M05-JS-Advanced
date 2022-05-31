@@ -43,6 +43,13 @@ function solution() {
     const codeEl = document.createElement('li');
     codeEl.textContent = `Postal Code: ${codeContent}`;
 
+
+    ulList.appendChild(nameEl);
+    ulList.appendChild(emailEl);
+    ulList.appendChild(phoneEl);
+    ulList.appendChild(addressEl);
+    ulList.appendChild(codeEl);
+    
     clearInputFields();
   }
 
