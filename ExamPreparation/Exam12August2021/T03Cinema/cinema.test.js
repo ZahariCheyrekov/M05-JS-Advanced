@@ -82,9 +82,13 @@ describe('Cinema Tests', () => {
             assert.equal(expectedMessage, actualMessage);
         });
 
-
-        it('should return that the swap was unsuccessful for first value for 0', () => {
+        it('should return that the swap was unsuccessful for second value for 0', () => {
             const actualMessage = cinema.swapSeatsInHall(10, 0);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should return that the swap was unsuccessful for invalid 0 values', () => {
+            const actualMessage = cinema.swapSeatsInHall(0, 0);
             assert.equal(expectedMessage, actualMessage);
         });
     });
