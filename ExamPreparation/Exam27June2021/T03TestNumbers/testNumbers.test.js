@@ -15,15 +15,10 @@ describe('TestNumbers Tests', () => {
             expect(testNumbers.sumNumbers('invalid', 'invalid')).to.be.undefined;
         });
 
-                // sumNumbers: function (num1, num2) {
-        //     let sum = 0;
-
-        //     if (typeof (num1) !== 'number' || typeof (num2) !== 'number') {
-        //         return undefined;
-        //     } else {
-        //         sum = (num1 + num2).toFixed(2);
-        //         return sum;
-        //     }
-        // },
+        it('should retutrn the correct result by adding two numbers', () => {
+            expect(testNumbers.sumNumbers(2, 2)).to.equal('4.00');
+            expect(testNumbers.sumNumbers(4, -2)).to.equal('2.00');
+            expect(testNumbers.sumNumbers(2, -4)).to.equal('-2.00');
+        });
     });
 });
