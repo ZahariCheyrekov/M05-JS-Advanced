@@ -17,7 +17,17 @@ function solve() {
         const year = Number(yearField.value);
         const price = Number(priceField.value);
 
-       
+        if (year <= 0 || price <= 0) {
+            return;
+        }
+
+        if (!modelField.value || !yearField.value
+            || !descriptionField.value || !priceField.value) {
+            return;
+        }
+
+        
+
         clearInputFields();
     }
 
