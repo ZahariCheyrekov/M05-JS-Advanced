@@ -49,22 +49,12 @@ describe('TestNumbers Tests', () => {
     });
 
     describe('Tests should check averageSumArray function', () => {
-        // averageSumArray: function (arr) {
-        //     let arraySum = 0;
-
-        //     for (let i = 0; i < arr.length; i++) {
-        //         arraySum += arr[i];
-        //     }
-
-        //     return arraySum / arr.length;
-        // }
+        it('should return correct result from array of floating values', () => {
+            expect(testNumbers.averageSumArray([10.5, 20.5, 30.5])).to.equal(20.5);
+        });
 
         it('should return correct result from array of integers values', () => {
             expect(testNumbers.averageSumArray([1, 2, 3])).to.equal(2);
-        });
-
-        it('should return correct result from array of floating values', () => {
-            expect(testNumbers.averageSumArray([10.5, 20.5, 30.5])).to.equal(20.5);
         });
     });
 });
