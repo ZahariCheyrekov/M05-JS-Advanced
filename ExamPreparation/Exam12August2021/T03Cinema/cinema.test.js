@@ -14,6 +14,12 @@ describe('Cinema Tests', () => {
             const actualMessage = cinema.showMovies(['partOne', 'partTwo']);
             assert.equal(expectedMessage, actualMessage);
         });
+
+        it('should return the given movies from the array of one value', () => {
+            const expectedMessage = 'partTwo';
+            const actualMessage = cinema.showMovies(['partTwo']);
+            assert.equal(expectedMessage, actualMessage);
+        });
     });
 
     describe('Tests should check ticketPrice function', () => {
@@ -42,15 +48,6 @@ describe('Cinema Tests', () => {
 
     describe('Tests should check swapSeatsInHall function', () => {
         const expectedMessage = 'Unsuccessful change of seats in the hall.';
-        // swapSeatsInHall: function (firstPlace, secondPlace) {
-        //     if (!Number.isInteger(firstPlace) || firstPlace <= 0 || firstPlace > 20 ||
-        //         !Number.isInteger(secondPlace) || secondPlace <= 0 || secondPlace > 20 ||
-        //         firstPlace === secondPlace) {
-        //         return "Unsuccessful change of seats in the hall.";
-        //     } else {
-        //         return "Successful change of seats in the hall.";
-        //     }
-        // }
 
         it('should return that the swap was unsuccessful for invalid first value', () => {
             const actualMessage = cinema.swapSeatsInHall('invalid', 10);
@@ -104,6 +101,11 @@ describe('Cinema Tests', () => {
 
         it('should return that the swap was unsuccessful for values of 25', () => {
             const actualMessage = cinema.swapSeatsInHall(25, 25);
+            assert.equal(expectedMessage, actualMessage);
+        });
+
+        it('should return that the one of the values do not exist', () => {
+            const actualMessage = cinema.swapSeatsInHall(10);
             assert.equal(expectedMessage, actualMessage);
         });
 
