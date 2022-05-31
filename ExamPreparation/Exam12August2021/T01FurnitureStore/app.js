@@ -68,7 +68,15 @@ function solve() {
         buyBtn.textContent = 'Buy it';
         buyBtn.classList.add('buyBtn');
 
-       
+        buyBtn.addEventListener('click', () => {
+            const currentPrice = Number(totalPriceElement.textContent);
+            const totalPrice = currentPrice + price;
+
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+
+            elementsTree.removeChild(productTr);
+            elementsTree.removeChild(productInfo);
+        });
 
         const buttons = document.createElement('td');
         buttons.appendChild(moreBtn);
