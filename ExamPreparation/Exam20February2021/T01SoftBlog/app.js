@@ -43,7 +43,12 @@ function solve() {
       archiveBtn.classList.add('btn');
       archiveBtn.classList.add('archive');
       archiveBtn.textContent = 'Archive';
-      
+      archiveBtn.addEventListener('click', (ev) => {
+         const liEl = document.createElement('li');
+         liEl.textContent = title.textContent;
+         archive.appendChild(liEl);
+         ev.target.parentElement.parentElement.parentElement.removeChild(article);
+      });
 
       article.appendChild(title);
       category.appendChild(categoryType);
