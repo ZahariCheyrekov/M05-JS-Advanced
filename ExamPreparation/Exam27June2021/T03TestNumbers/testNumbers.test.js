@@ -11,7 +11,9 @@ describe('TestNumbers Tests', () => {
             expect(testNumbers.sumNumbers(10, 'invalid')).to.be.undefined;
         });
 
-       
+        it('should throw error for invalid type parameters', () => {
+            expect(testNumbers.sumNumbers('invalid', 'invalid')).to.be.undefined;
+        });
 
                 // sumNumbers: function (num1, num2) {
         //     let sum = 0;
