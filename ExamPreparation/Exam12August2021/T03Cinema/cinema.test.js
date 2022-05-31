@@ -101,5 +101,10 @@ describe('Cinema Tests', () => {
             const actualMessage = cinema.swapSeatsInHall(10, 25);
             assert.equal(expectedMessage, actualMessage);
         });
+
+        it('should return that the swap was unsuccessful for values of 25', () => {
+            const actualMessage = cinema.swapSeatsInHall(25, 25);
+            assert.equal(expectedMessage, actualMessage);
+        });
     });
 });
