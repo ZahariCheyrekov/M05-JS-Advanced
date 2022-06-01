@@ -14,4 +14,10 @@ describe('Dealership Tests', () => {
             expect(dealership.newCarCost('new', 3_500_00)).to.equal(3_500_00);
         });
     });
+
+    describe('Tests should check carEquipment function', () => {
+        it('should return the selected cars in array', () => {
+            expect(dealership.carEquipment(['new', 'old'], [0, 1])).to.deep.equal(['new', 'old']);
+        });
+    });
 });
