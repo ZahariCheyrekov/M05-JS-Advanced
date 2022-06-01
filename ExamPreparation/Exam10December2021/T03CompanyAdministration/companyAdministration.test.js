@@ -47,5 +47,11 @@ describe('CompanyAdministration Tests', () => {
         it('should throw error for invalid hours of type string', () => {
             expect(() => companyAdministration.calculateSalary('salary', 3)).to.throw('Invalid hours');
         });
+
+        it('should throw error for invalid hours of type null', () => {
+            expect(() => companyAdministration.calculateSalary(null, 3)).to.throw('Invalid hours');
+        });
+
+
     });
 });
