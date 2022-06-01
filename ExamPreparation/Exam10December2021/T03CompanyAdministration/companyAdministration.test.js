@@ -20,5 +20,10 @@ describe('CompanyAdministration Tests', () => {
         it('should throw error for invalid position Cat', () => {
             expect(() => companyAdministration.hiringEmployee('Cats', 'Cat', 10)).to.throw('We are not looking for workers for this position.');
         });
+
+        it('should return that employee is approved for the position with 3 years of experience', () => {
+            expect(companyAdministration.hiringEmployee('Prog1234', 'Programmer', 3))
+                .to.equal('Prog1234 was successfully hired for the position Programmer.');
+        });
     });
 });
