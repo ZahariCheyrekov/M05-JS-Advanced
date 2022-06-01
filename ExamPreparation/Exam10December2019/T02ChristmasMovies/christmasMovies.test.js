@@ -55,4 +55,12 @@ describe('ChristmasMovies Tests', () => {
             expect(instance.watched['NewOne']).to.equal(1);
         });
     });
+
+    describe('Tests should check favouriteMovie function', () => {
+        it('should throw error for no watched movies yet', () => {
+            expect(() => instance.favouriteMovie()).to.throw('You have not watched a movie yet this year!');
+        });
+
+      
+    });
 });
