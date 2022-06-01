@@ -10,7 +10,18 @@ class ChristmasDinner {
         if (budget < 0) {
             throw new Error('The budget cannot be a negative number');
         }
-        
+
         this._budget = budget;
+    }
+
+    shopping([name, price]) {
+        if (price > this._budget) {
+            throw new Error('Not enough money to buy this product');
+        }
+
+        this.products.push(name);
+        this._budget -= price;
+
+        return `You have successfully bought ${name}!`;
     }
 }
