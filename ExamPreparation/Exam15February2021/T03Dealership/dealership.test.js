@@ -36,5 +36,9 @@ describe('Dealership Tests', () => {
         it('should return that the euro category is low and there is no discount for it', () => {
             expect(dealership.euroCategory(3)).to.equal('Your euro category is low, so there is no discount from the final price!');
         });
+
+        it('should return that we have discount to the final price of euro catefory 4', () => {
+            expect(dealership.euroCategory(4)).to.equal(`We have added 5% discount to the final price: 14250.`);
+        });
     });
 });
