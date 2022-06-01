@@ -44,5 +44,16 @@ describe("Repository Tests", () => {
         });
     })
 
-  
+    describe('Tests should check del funtion', () => {
+        it('should delete the given index correctly', () => {
+            instance.add({ name: '', age: 1, birthday: {} });
+            instance.add({ name: '', age: 1, birthday: {} });
+            instance.del(1);
+            expect(instance.data.has(1)).to.eq(false);
+        });
+
+        it('should throw error for not existing index in the collection', () => {
+            expect(() => instance.del(-10)).to.throw('Entity with id: -10 does not exist!');
+        });
+    });
 });
