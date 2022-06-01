@@ -36,5 +36,10 @@ describe('NumberOperations Tests', () => {
             expect(numberOperations.numberChecker(1)).to.contain('The number is lower than 100!');
         });
 
+        it('should retutn that the number is greaterthan or equal to 100', () => {
+            expect(numberOperations.numberChecker(100)).to.contain('The number is greater or equal to 100!');
+        });
+
+       
     });
 });
