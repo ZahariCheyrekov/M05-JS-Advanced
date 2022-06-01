@@ -28,5 +28,21 @@ describe("Repository Tests", () => {
         });
     });
 
+    describe('Tests should check update function', () => {
+        it('should throw error for no id presented in the data', () => {
+            expect(() => instance.update(0, {},)).to.throw('Entity with id: 0 does not exist!');
+        });
+
+        it('should throw error for missing prop in object', () => {
+            instance.add({ name: '', age: 0, birthday: {}, });
+            expect(() => instance.update(0, { age: 1, birthday: { date: 0 } })).to.throw(Error);
+        });
+
+        it('should throw TypeError for invalid type input', () => {
+            instance.add({ name: '', age: 0, birthday: {}, });
+            expect(() => instance.update(0, { name: 0, age: 1, birthday: { date: 0 } })).to.throw(TypeError);
+        });
+    })
+
   
 });
