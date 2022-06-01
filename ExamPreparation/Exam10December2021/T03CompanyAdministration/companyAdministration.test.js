@@ -9,41 +9,7 @@ describe('CompanyAdministration Tests', () => {
     describe('Tests should check calculateSalary function', () => {
        
 
-        it('should calculate the total salary amount for less than 160 hours', () => {
-            const expectedAmount = 2400;
-            const actualAmount = companyAdministration.calculateSalary(160);
-            assert.equal(expectedAmount, actualAmount);
-        });
-
-        it('should calculate the total salary amount for 1 hour', () => {
-            const expectedAmount = 15;
-            const actualAmount = companyAdministration.calculateSalary(1);
-            assert.equal(expectedAmount, actualAmount);
-        });
-
-        it('should calculate the total salary amount for 161 hours', () => {
-            const expectedAmount = 3415;
-            const actualAmount = companyAdministration.calculateSalary(161);
-            assert.equal(expectedAmount, actualAmount);
-        });
-
-        it('should calculate the total salary amount for 0 hours', () => {
-            const expectedAmount = 0;
-            const actualAmount = companyAdministration.calculateSalary(0);
-            assert.equal(expectedAmount, actualAmount);
-        });
-
-        it('should calculate the total salary amount for more than 160 hours', () => {
-            const expectedAmount = 4000;
-            const actualAmount = companyAdministration.calculateSalary(200);
-            assert.equal(expectedAmount, actualAmount);
-        });
-
-        it('should calculate the total salary amount for 160 hours', () => {
-            const expectedAmount = 300;
-            const actualAmount = companyAdministration.calculateSalary(20);
-            assert.equal(expectedAmount, actualAmount);
-        });
+       
     });
 
     describe('Tests should check firedEmployee function', () => {
