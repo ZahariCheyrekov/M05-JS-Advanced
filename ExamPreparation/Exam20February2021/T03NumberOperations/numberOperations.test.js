@@ -13,19 +13,6 @@ describe('NumberOperations Tests', () => {
     });
 
     describe('Tests should check numberChecker function', () => {
-        // numberChecker: function (input) {
-        //     input = Number(input);
-
-        //     if (isNaN(input)) {
-        //         throw new Error('The input is not a number!');
-        //     }
-
-        //     if (input < 100) {
-        //         return 'The number is lower than 100!';
-        //     } else {
-        //         return 'The number is greater or equal to 100!';
-        //     }
-        // },
         it('should throw error for input value wich is NaN', () => {
             expect(() => numberOperations.numberChecker('abc')).to.throw(Error);
             expect(() => numberOperations.numberChecker()).to.throw(Error);
@@ -43,5 +30,13 @@ describe('NumberOperations Tests', () => {
         it('should retutn that the number is greater than 100', () => {
             expect(numberOperations.numberChecker(110)).to.contain('The number is greater or equal to 100!');
         });
+    });
+
+    describe('Tests should check sumArrays function', () => {
+        it('should return sum of two equal length arrays', () => {
+            expect(numberOperations.sumArrays([1, 2, 3], [1, 2, 3])).to.deep.equal([2, 4, 6]);
+        });
+
+        
     });
 });
