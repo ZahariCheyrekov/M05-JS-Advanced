@@ -63,10 +63,5 @@ describe('CompanyAdministration Tests', () => {
             assert.equal(expectedResult, actualResult);
         });
 
-        it('should return every employee with different array index from the input index value', () => {
-            const expectedResult = 'a, b, c';
-            const actualResult = companyAdministration.firedEmployee(['a', 'b', 'c', 'd'], 3);
-            assert.equal(expectedResult, actualResult);
-        });
     });
 });
