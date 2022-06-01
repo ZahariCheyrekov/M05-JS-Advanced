@@ -19,7 +19,7 @@ class ChristmasDinner {
         }
 
         this.products.push(name);
-        this._budget -= price;
+        this.budget -= price;
         return `You have successfully bought ${name}!`;
     }
 
@@ -33,11 +33,11 @@ class ChristmasDinner {
     }
 
     inviteGuests(name, dish) {
-        if (this.guests[name]) {
+        if (this.guests[name] != undefined) {
             throw new Error('This guest has already been invited');
         }
 
-        if (!this.dishes.find(d => d.recipeName == dish)) {
+        if (this.dishes.find(d => d.recipeName == dish) == undefined) {
             throw new Error('We do not have this dish');
         }
 
@@ -45,7 +45,16 @@ class ChristmasDinner {
         return `You have successfully invited ${name}!`;
     }
 
+    showAttendance() {
+        let result = [];
 
+        for (const [name, dish] of Object.entries(this.guests)) {
+            const products = this.dishes.find(r => r.recipeName == dish).productsList.join(', ');
+            result.push(`${name} will eat ${dish}, which consists of ${products}`);
+        }
+
+        return result.join('\n');
+    }
 }
 
 let dinner = new ChristmasDinner(300);
