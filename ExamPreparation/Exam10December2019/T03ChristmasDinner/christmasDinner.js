@@ -23,4 +23,14 @@ class ChristmasDinner {
         return `You have successfully bought ${name}!`;
     }
 
+    recipes({ recipeName, productsList }) {
+        if (!productsList.every(product => this.products.includes(product))) {
+            throw new Error('We do not have this product');
+        }
+
+        this.dishes.push({ recipeName, productsList });
+        return `${recipeName} has been successfully cooked!`;
+    }
+
+   
 }
