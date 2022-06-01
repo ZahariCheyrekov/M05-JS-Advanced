@@ -38,5 +38,30 @@ class Story {
         return `${this.username} disliked ${this.title}`;
     }
 
-    
+    comment(username, content, id) {
+        const comment = {
+            id,
+            username,
+            content,
+            replies: [],
+        };
+
+        const commentWithId = this.comments.find(c => c.id == id);
+
+        if (commentWithId) {
+            const replyID = Number(commentWithId.id + '.' + (commentWithId.replies.length + 1));
+            const reply = {
+                idd: replyID,
+                username,
+                content,
+            };
+
+            commentWithId.replies.push(reply);
+            return 'You replied successfully';
+        }
+
+        comment.id = this.comments.length + 1;
+        this.comments.push(comment);
+        return `${username} commented on ${this.title}`;
+    }
 }
