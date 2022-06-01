@@ -13,4 +13,14 @@ class ChristmasDinner {
         this.budget = num;
     }
 
+    shopping([name, price]) {
+        if (price > this.budget) {
+            throw new Error('Not enough money to buy this product');
+        }
+
+        this.products.push(name);
+        this.budget -= price;
+        return `You have successfully bought ${name}!`;
+    }
+
 }
