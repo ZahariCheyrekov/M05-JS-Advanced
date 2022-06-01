@@ -5,10 +5,16 @@ class Bank {
     }
 
     newCustomer(customer) {
-        if (this.allCustomers.find(c => c.persnoalId === customer.personalId)) {
+        if (this.findCustomerById(customer.persnoalId)) {
             throw new Error(`${customer.firstName} ${customer.lastName} is already our customer!`);
         }
         this.allCustomers.push(customer);
         return customer;
+    }
+
+  
+
+    findCustomerById(id) {
+        return this.allCustomers.find(c => c.personalId == id);
     }
 }
