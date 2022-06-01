@@ -3,10 +3,13 @@ const { before } = require('mocha');
 const { Repository } = require('./repository');
 
 describe("Repository Tests", () => {
-    let repo;
+    let instance = {};
 
     beforeEach(() => {
-        let properties = {
-        };
+        beforeEach(() => instance = new Repository({
+            name: 'string',
+            age: 'number',
+            birthday: 'object'
+        }))
     });
 });
