@@ -46,7 +46,7 @@ function solve() {
             finishBtn.classList.add('orange');
             finishBtn.textContent = 'Finish';
 
-            divBtns.removeChild(startBtn)
+            divBtns.removeChild(startBtn);
             divBtns.appendChild(finishBtn);
             article.appendChild(divBtns);
 
@@ -56,6 +56,9 @@ function solve() {
         const deleteBtn = document.createElement('button');
         deleteBtn.classList.add('red');
         deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', (ev) => {
+            ev.target.parentElement.parentElement.parentElement.removeChild(article);
+        });
 
         article.appendChild(header);
         article.appendChild(descriptionContent);
