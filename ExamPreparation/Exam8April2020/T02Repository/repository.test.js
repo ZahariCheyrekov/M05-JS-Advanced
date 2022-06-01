@@ -16,5 +16,9 @@ describe("Repository Tests", () => {
         });
     });
 
-    
+    describe('Test should add valid object to the instance', () => {
+        it('should return zero id for only one object added', () => {
+            expect(instance.add({ name: 'ji', age: 10, birthday: {} })).to.equal(0);
+        });
+    });
 });
