@@ -19,7 +19,11 @@ function solution() {
         const sendButton = document.createElement('button');
         sendButton.id = 'sendButton';
         sendButton.textContent = 'Send';
-      
+        sendButton.addEventListener('click', () => {
+            li.removeChild(sendButton);
+            li.removeChild(discardButton);
+            sentGifts.appendChild(li);
+        });
 
         const discardButton = document.createElement('button');
         discardButton.id = 'discardButton';
