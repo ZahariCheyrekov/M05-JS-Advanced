@@ -1,11 +1,11 @@
 class Bank {
     constructor(bankName) {
-        this.bankName = bankName;
+        this._bankName = bankName;
         this.allCustomers = [];
     }
 
     newCustomer(customer) {
-        if (this.findCustomerById(customer.persnoalId)) {
+        if (this.allCustomers.find(c => c.personalId === customer.personalId)) {
             throw new Error(`${customer.firstName} ${customer.lastName} is already our customer!`);
         }
         this.allCustomers.push(customer);
@@ -34,7 +34,7 @@ class Bank {
     }
 
     withdrawMoney(personalId, amount) {
-        const customer = this.findCustomer(personalId);
+        const customer = this.findCustomerById(personalId);
 
         if (customer.totalMoney < amount) {
             throw new Error(`${customer.firstName} ${customer.lastName} does not have enough money to withdraw that amount!`);
@@ -46,7 +46,7 @@ class Bank {
     }
 
     customerInfo(personalId) {
-        const customer = this.findCustomer(personalId);
+        const customer = this.findCustomerById(personalId);
 
         let info = [];
         info.push(`Bank name: ${this._bankName}`);
@@ -63,7 +63,13 @@ class Bank {
     }
 
     findCustomerById(id) {
-        return this.allCustomers.find(c => c.personalId == id);
+        const customer = this.allCustomers.find(c => c.personalId === id);
+
+        if (!customer) {
+            throw new Error('We have no customer with this ID!');
+        }
+
+        return customer;
     }
 }
 
