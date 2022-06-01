@@ -16,6 +16,7 @@ describe('ChristmasMovies Tests', () => {
     describe('Tests should check discardMovie function', () => {
         it('should throw error because movies is not in the collection', () => {
             expect(() => instance.discardMovie('Cobra')).to.throw('Cobra is not at your collection!');
+            expect(() => instance.discardMovie('Sity')).to.throw('Sity is not at your collection!');
         });
 
         it('should return the correct message for discarted movie', () => {
