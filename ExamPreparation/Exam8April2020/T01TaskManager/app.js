@@ -7,6 +7,8 @@ function solve() {
     addBtn.addEventListener('click', addTask);
     const openDiv = document.querySelectorAll('.wrapper section')[1].children;
     const open = openDiv[0];
+    const inProgress = document.querySelectorAll('.wrapper section')[2].children;
+    const inProgressEl = inProgress[1];
 
     function addTask(ev) {
         ev.preventDefault();
@@ -37,6 +39,19 @@ function solve() {
         const startBtn = document.createElement('button');
         startBtn.classList.add('green');
         startBtn.textContent = 'Start';
+        startBtn.addEventListener('click', (ev) => {
+            ev.target.parentElement.parentElement.parentElement.removeChild(article);
+
+            const finishBtn = document.createElement('button');
+            finishBtn.classList.add('orange');
+            finishBtn.textContent = 'Finish';
+
+            divBtns.removeChild(startBtn)
+            divBtns.appendChild(finishBtn);
+            article.appendChild(divBtns);
+
+            inProgressEl.appendChild(article);
+        });
 
         const deleteBtn = document.createElement('button');
         deleteBtn.classList.add('red');
