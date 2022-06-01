@@ -13,9 +13,19 @@ describe('ChristmasMovies Tests', () => {
         });
     });
 
+    describe('Tests should check discardMovie function', () => {
+
+        
+        it('should return the correct message for discarted movie', () => {
+            instance.buyMovie('Black Eyes', ['Onno']);
+            instance.watched['Black Eyes'] = 1;
+            expect(instance.discardMovie('Black Eyes')).to.equal(`You just threw away Black Eyes!`);
+        });
+    });
+
     describe('Tests should check buyMovie function', () => {
         it('should return the correct message from the buyMovie function', () => {
-            expect(instance.buyMovie('new', ['tc', 'ja', 'tc'])).to.equal(`You just got new to your collection in which tc, ja are taking part!`)
+            expect(instance.buyMovie('new', ['tc', 'ja', 'tc'])).to.equal(`You just got new to your collection in which tc, ja are taking part!`);
         });
 
         it('should return the given movies was already bought', () => {
