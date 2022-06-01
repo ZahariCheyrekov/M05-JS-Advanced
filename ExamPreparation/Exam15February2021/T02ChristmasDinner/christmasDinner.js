@@ -6,22 +6,20 @@ class ChristmasDinner {
         this.guests = {};
     }
 
-    set _budget(budget) {
-        if (budget < 0) {
+    set _budget(num) {
+        if (num < 0) {
             throw new Error('The budget cannot be a negative number');
         }
-
-        this._budget = budget;
+        this.budget = num;
     }
 
     shopping([name, price]) {
-        if (price > this._budget) {
+        if (price > this.budget) {
             throw new Error('Not enough money to buy this product');
         }
 
         this.products.push(name);
         this._budget -= price;
-
         return `You have successfully bought ${name}!`;
     }
 
@@ -31,7 +29,19 @@ class ChristmasDinner {
         }
 
         this.dishes.push({ recipeName, productsList });
-
         return `${recipeName} has been successfully cooked!`;
+    }
+
+    inviteGuests(name, dish) {
+        if (this.guests[name]) {
+            throw new Error('This guest has already been invited');
+        }
+
+        if (!this.dishes.find(d => d.recipeName == dish)) {
+            throw new Error('We do not have this dish');
+        }
+
+        this.guests[name] = dish;
+        return `You have successfully invited ${name}!`;
     }
 }
