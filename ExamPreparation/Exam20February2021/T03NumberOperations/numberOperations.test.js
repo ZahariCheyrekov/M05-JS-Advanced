@@ -30,6 +30,11 @@ describe('NumberOperations Tests', () => {
             expect(() => numberOperations.numberChecker('abc')).to.throw(Error);
             expect(() => numberOperations.numberChecker()).to.throw(Error);
         });
-    });
 
+        it('should retutn that the number is lower than 100', () => {
+            expect(numberOperations.numberChecker(99)).to.contain('The number is lower than 100!');
+            expect(numberOperations.numberChecker(1)).to.contain('The number is lower than 100!');
+        });
+
+    });
 });
