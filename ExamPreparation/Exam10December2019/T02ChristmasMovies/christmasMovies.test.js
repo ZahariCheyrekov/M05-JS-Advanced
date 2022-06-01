@@ -62,9 +62,9 @@ describe('ChristmasMovies Tests', () => {
         });
 
         it('should return the correct message for the favourite movie', () => {
-            instance.watched['FavouriteMovie'] = 1;
-            instance.watched['FavouriteMovie'] = 2;
-            expect(instance.favouriteMovie()).to.equal('Your favourite movie is FavouriteMovie and you have watched it 2 times!');
+            instance.watched.NewOne = 1;
+            instance.watched.MyFavourite = 2;
+            expect(instance.favouriteMovie()).to.equal('Your favourite movie is MyFavourite and you have watched it 2 times!');
         });
     });
 
