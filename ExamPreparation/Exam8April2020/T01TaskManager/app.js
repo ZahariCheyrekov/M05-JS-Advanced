@@ -17,6 +17,12 @@ function solve() {
             return;
         }
 
-        
+        clearInputFields();
+    }
+
+    function clearInputFields() {
+        taskField.value = '';
+        descriptioField.value = '';
+        dateField.value = '';
     }
 }
