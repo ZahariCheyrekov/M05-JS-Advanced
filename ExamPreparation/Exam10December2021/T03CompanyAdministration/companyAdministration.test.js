@@ -25,5 +25,10 @@ describe('CompanyAdministration Tests', () => {
             expect(companyAdministration.hiringEmployee('Prog1234', 'Programmer', 3))
                 .to.equal('Prog1234 was successfully hired for the position Programmer.');
         });
+
+        it('should return that employee is approved for the position with 4 years of experience', () => {
+            expect(companyAdministration.hiringEmployee('Prog1234', 'Programmer', 4))
+                .to.equal('Prog1234 was successfully hired for the position Programmer.');
+        });
     });
 });
