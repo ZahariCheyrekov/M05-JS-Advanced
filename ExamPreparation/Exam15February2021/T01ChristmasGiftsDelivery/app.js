@@ -1,3 +1,4 @@
 function solution() {
-    //TO DO
+    const inputField = document.querySelector('.card div input');
+    const addGiftBtn = document.querySelector('.card div button');
 }
