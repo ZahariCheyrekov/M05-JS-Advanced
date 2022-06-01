@@ -32,5 +32,18 @@ class ChristmasDinner {
         return `${recipeName} has been successfully cooked!`;
     }
 
-   
+    inviteGuests(name, dish) {
+        if (this.guests[name] != undefined) {
+            throw new Error('This guest has already been invited');
+        }
+
+        if (this.dishes.find(d => d.recipeName == dish) == undefined) {
+            throw new Error('We do not have this dish');
+        }
+
+        this.guests[name] = dish;
+        return `You have successfully invited ${name}!`;
+    }
+
+  
 }
