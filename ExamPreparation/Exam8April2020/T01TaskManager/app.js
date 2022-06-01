@@ -42,6 +42,14 @@ function solve() {
         deleteBtn.classList.add('red');
         deleteBtn.textContent = 'Delete';
 
+        article.appendChild(header);
+        article.appendChild(descriptionContent);
+        article.appendChild(dateContent);
+        divBtns.appendChild(startBtn);
+        divBtns.appendChild(deleteBtn);
+        article.appendChild(divBtns);
+
+        open.appendChild(article);
     }
 
     function clearInputFields() {
