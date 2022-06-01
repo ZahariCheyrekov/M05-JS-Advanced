@@ -37,6 +37,10 @@ describe('NumberOperations Tests', () => {
             expect(numberOperations.sumArrays([1, 2, 3], [1, 2, 3])).to.deep.equal([2, 4, 6]);
         });
 
-        
+        it('should return sum of arrays first array is longer', () => {
+            expect(numberOperations.sumArrays([1, 2, 3], [1, 2])).to.deep.equal([2, 4, 3]);
+        });
+
+
     });
 });
