@@ -28,6 +28,11 @@ function solution() {
         const discardButton = document.createElement('button');
         discardButton.id = 'discardButton';
         discardButton.textContent = 'Discard';
+        discardButton.addEventListener('click', () => {
+            li.removeChild(sendButton);
+            li.removeChild(discardButton);
+            discartedGifts.appendChild(li);
+        });
 
         li.appendChild(sendButton);
         li.appendChild(discardButton);
