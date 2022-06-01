@@ -43,4 +43,16 @@ describe('ChristmasMovies Tests', () => {
             expect(() => instance.buyMovie('new', ['tc'])).to.throw(`You already own new in your collection!`);
         });
     });
+
+    describe('Tests should check watchMovie function', () => {
+        it('should throw error for no such movie in the collection', () => {
+            expect(() => instance.watchMovie('NoSuchMovie')).to.throw('No such movie in your collection!');
+        });
+
+        it('should add watched movie to the watched movie array correctly', () => {
+            instance.buyMovie('NewOne', ['Someone']);
+            instance.watchMovie('NewOne');
+            expect(instance.watched['NewOne']).to.equal(1);
+        });
+    });
 });
