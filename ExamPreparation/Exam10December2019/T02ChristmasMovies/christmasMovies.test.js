@@ -67,4 +67,12 @@ describe('ChristmasMovies Tests', () => {
             expect(instance.favouriteMovie()).to.equal('Your favourite movie is FavouriteMovie and you have watched it 2 times!');
         });
     });
+
+    describe('Tests should check mostStarredActor', () => {
+        it('should throw error if there are not any watched movies yet', () => {
+            expect(() => instance.mostStarredActor()).to.throw('You have not watched a movie yet this year!');
+        });
+
+      
+    });
 });
