@@ -5,10 +5,7 @@ function solve() {
     const addBtn = document.getElementById('add');
 
     addBtn.addEventListener('click', addTask);
-    const openDiv = document.querySelectorAll('.wrapper section')[1].children;
-    const open = openDiv[0];
-    const inProgress = document.querySelectorAll('.wrapper section')[2].children;
-    const inProgressEl = inProgress[1];
+    const [inputSection, openSection, progressSection, completeSection] = document.querySelectorAll('section');
 
     function addTask(ev) {
         ev.preventDefault();
@@ -33,41 +30,46 @@ function solve() {
         const dateContent = document.createElement('p');
         dateContent.textContent = `Due Date: ${date}`;
 
-        const divBtns = document.createElement('div');
-        divBtns.classList.add('flex');
+        const divBtn = document.createElement('div');
+        divBtn.classList.add('flex');
 
         const startBtn = document.createElement('button');
         startBtn.classList.add('green');
         startBtn.textContent = 'Start';
-        startBtn.addEventListener('click', (ev) => {
-            ev.target.parentElement.parentElement.parentElement.removeChild(article);
-
-            const finishBtn = document.createElement('button');
-            finishBtn.classList.add('orange');
-            finishBtn.textContent = 'Finish';
-
-            divBtns.removeChild(startBtn);
-            divBtns.appendChild(finishBtn);
-            article.appendChild(divBtns);
-
-            inProgressEl.appendChild(article);
-        });
+        startBtn.addEventListener('click', startArticle);
 
         const deleteBtn = document.createElement('button');
         deleteBtn.classList.add('red');
         deleteBtn.textContent = 'Delete';
-        deleteBtn.addEventListener('click', (ev) => {
-            ev.target.parentElement.parentElement.parentElement.removeChild(article);
-        });
+        deleteBtn.addEventListener('click', deleteArticle);
 
+        divBtn.appendChild(startBtn);
+        divBtn.appendChild(deleteBtn);
         article.appendChild(header);
         article.appendChild(descriptionContent);
         article.appendChild(dateContent);
-        divBtns.appendChild(startBtn);
-        divBtns.appendChild(deleteBtn);
-        article.appendChild(divBtns);
+        article.appendChild(divBtn);
 
-        open.appendChild(article);
+        openSection.lastElementChild.appendChild(article);
+
+        function deleteArticle() {
+            article.remove();
+        }
+
+        function finishArticle() {
+            divBtn.remove();
+            completeSection.lastElementChild.appendChild(article);
+        }
+
+        function startArticle() {
+            startBtn.remove();
+            const finishBtn = document.createElement('button');
+            finishBtn.classList.add('orange');
+            finishBtn.textContent = 'Finish';
+            finishBtn.addEventListener('click', finishArticle);
+            divBtn.appendChild(finishBtn);
+            progressSection.lastElementChild.appendChild(article);
+        }
     }
 
     function clearInputFields() {
