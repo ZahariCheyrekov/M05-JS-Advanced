@@ -7,17 +7,7 @@ describe('CompanyAdministration Tests', () => {
     });
 
     describe('Tests should check calculateSalary function', () => {
-        it('should throw error for input value of hours not a number', () => {
-            expect(() => companyAdministration.calculateSalary('invalid')).to.throw(Error);
-        });
-
-        it('should throw error for input value of null', () => {
-            expect(() => companyAdministration.calculateSalary(null)).to.throw(Error);
-        });
-
-        it('should throw error for input value of hours less than zero', () => {
-            expect(() => companyAdministration.calculateSalary(-10)).to.throw(Error);
-        });
+       
 
         it('should calculate the total salary amount for less than 160 hours', () => {
             const expectedAmount = 2400;
