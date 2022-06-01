@@ -28,7 +28,10 @@ function solution() {
         li.appendChild(sendButton);
         li.appendChild(discardButton);
 
-       
+        const gifts = Array.from(listGifts.children);
+        gifts.push(li);
+        gifts.sort((a, b) => a.innerHTML.localeCompare(b.innerHTML));
+        gifts.forEach(gift => listGifts.appendChild(gift));
     }
 
     function clearInputField() {
