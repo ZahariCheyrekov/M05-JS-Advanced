@@ -45,21 +45,24 @@ class Bank {
         return `${customer.totalMoney}$`;
     }
 
+    customerInfo(personalId) {
+        const customer = this.findCustomer(personalId);
+
+        let info = [];
+        info.push(`Bank name: ${this._bankName}`);
+        info.push(`Customer name: ${customer.firstName} ${customer.lastName}`);
+        info.push(`Customer ID: ${customer.personalId}`);
+        info.push(`Total Money: ${customer.totalMoney}$`);
+        info.push('Transactions:');
+
+        for (let i = customer.transactions.length - 1; i >= 0; i--) {
+            info.push(`${i + 1}. ${customer.transactions[i]}`);
+        }
+
+        return info.join('\n');
+    }
+
     findCustomerById(id) {
         return this.allCustomers.find(c => c.personalId == id);
     }
 }
-
-let bank = new Bank('SoftUni Bank');
-
-console.log(bank.newCustomer({ firstName: 'Gii', lastName: 'Goo', personalId: 6233267 }));
-console.log(bank.newCustomer({ firstName: 'Bii', lastName: 'Boo', personalId: 4151596 }));
-
-// bank.depositMoney(6233267, 250);
-// console.log(bank.depositMoney(6233267, 250));
-// bank.depositMoney(4151596, 555);
-
-// console.log(bank.withdrawMoney(6233267, 125));
-
-// console.log(bank.customerInfo(6233267));
-
