@@ -14,6 +14,13 @@ describe('ChristmasMovies Tests', () => {
     });
 
     describe('Tests should check discardMovie function', () => {
+        it('should throw error because movie was bought but is not watched', () => {
+            instance.buyMovie('Black', ['Sneyp']);
+            instance.buyMovie('White', ['Snayp']);
+            expect(() => instance.discardMovie('Black')).to.throw('Black is not watched');
+            expect(() => instance.discardMovie('White')).to.throw('White is not watched');
+        });
+
         it('should throw error because movies is not in the collection', () => {
             expect(() => instance.discardMovie('Cobra')).to.throw('Cobra is not at your collection!');
             expect(() => instance.discardMovie('Sity')).to.throw('Sity is not at your collection!');
