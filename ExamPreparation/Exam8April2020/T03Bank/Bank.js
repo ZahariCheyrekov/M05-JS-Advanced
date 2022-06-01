@@ -16,7 +16,7 @@ class Bank {
         const customer = this.findCustomerById(personalId);
 
         if (!customer) {
-            throw new Error('We have no customer with this ID!')
+            throw new Error('We have no customer with this ID!');
         }
 
         if (!customer.hasOwnProperty('totalMoney')) {
@@ -29,7 +29,19 @@ class Bank {
 
         customer.transactions.push(`${customer.firstName} ${customer.lastName} made deposit of ${amount}$!`);
         customer.totalMoney += amount;
-        
+
+        return `${customer.totalMoney}$`;
+    }
+
+    withdrawMoney(personalId, amount) {
+        const customer = this.findCustomer(personalId);
+
+        if (customer.totalMoney < amount) {
+            throw new Error(`${customer.firstName} ${customer.lastName} does not have enough money to withdraw that amount!`);
+        }
+
+        customer.transactions.push(`${customer.firstName} ${customer.lastName} withdrew ${amount}$!`);
+        customer.totalMoney -= amount;
         return `${customer.totalMoney}$`;
     }
 
