@@ -21,4 +21,12 @@ describe("Repository Tests", () => {
             expect(instance.add({ name: 'ji', age: 10, birthday: {} })).to.equal(0);
         });
     });
+
+    describe('Tests should check getId function', () => {
+        it('should return that entity with the given id does not exist', () => {
+            expect(() => instance.getId(10)).to.throw('Entity with id: 10 does not exist!');
+        });
+    });
+
+  
 });
