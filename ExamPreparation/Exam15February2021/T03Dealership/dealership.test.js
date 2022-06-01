@@ -22,23 +22,16 @@ describe('Dealership Tests', () => {
     });
 
     describe('Tests should check euroCategory', () => {
-        // euroCategory: function (category) {
-        //     if (category >= 4) {
-        //         let price = this.newCarCost('Audi A4 B8', 30000);
-        //         let total = price - (price * 0.05);
-
-        //         return `We have added 5% discount to the final price: ${total}.`;
-
-        //     } else {
-        //         return 'Your euro category is low, so there is no discount from the final price!';
-        //     }
-        // }
         it('should return that the euro category is low and there is no discount for it', () => {
             expect(dealership.euroCategory(3)).to.equal('Your euro category is low, so there is no discount from the final price!');
         });
 
         it('should return that we have discount to the final price of euro catefory 4', () => {
             expect(dealership.euroCategory(4)).to.equal(`We have added 5% discount to the final price: 14250.`);
+        });
+
+        it('should return that we have discount to the final price of euro catefory 10', () => {
+            expect(dealership.euroCategory(10)).to.equal(`We have added 5% discount to the final price: 14250.`);
         });
     });
 });
