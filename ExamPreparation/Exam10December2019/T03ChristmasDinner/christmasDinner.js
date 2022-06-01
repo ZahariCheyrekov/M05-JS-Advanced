@@ -45,5 +45,14 @@ class ChristmasDinner {
         return `You have successfully invited ${name}!`;
     }
 
-  
+    showAttendance() {
+        let result = [];
+
+        for (const [name, dish] of Object.entries(this.guests)) {
+            const products = this.dishes.find(r => r.recipeName == dish).productsList.join(', ');
+            result.push(`${name} will eat ${dish}, which consists of ${products}`);
+        }
+
+        return result.join('\n');
+    }
 }
