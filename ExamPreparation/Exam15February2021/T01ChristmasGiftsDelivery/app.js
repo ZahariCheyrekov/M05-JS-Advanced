@@ -4,14 +4,31 @@ function solution() {
     addGiftBtn.addEventListener('click', addGift);
 
     const uls = document.querySelectorAll('section.card ul');
-    const listGifts = sections[0];
-    const sentGifts = sections[1];
-    const discartedGifts = sections[2];
+    const listGifts = uls[0];
+    const sentGifts = uls[1];
+    const discartedGifts = uls[2];
 
     function addGift() {
-
-
+        const inputValue = inputField.value;
         clearInputField();
+
+        const li = document.createElement('li');
+        li.classList.add('gift');
+        li.textContent = inputValue;
+
+        const sendButton = document.createElement('button');
+        sendButton.id = 'sendButton';
+        sendButton.textContent = 'Send';
+      
+
+        const discardButton = document.createElement('button');
+        discardButton.id = 'discardButton';
+        discardButton.textContent = 'Discard';
+
+        li.appendChild(sendButton);
+        li.appendChild(discardButton);
+
+       
     }
 
     function clearInputField() {
