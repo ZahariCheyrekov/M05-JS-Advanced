@@ -16,5 +16,9 @@ describe('CompanyAdministration Tests', () => {
         it('should throw error for invalid position Dog', () => {
             expect(() => companyAdministration.hiringEmployee('Doggy', 'Dog', 10)).to.throw('We are not looking for workers for this position.');
         });
+
+        it('should throw error for invalid position Cat', () => {
+            expect(() => companyAdministration.hiringEmployee('Cats', 'Cat', 10)).to.throw('We are not looking for workers for this position.');
+        });
     });
 });
