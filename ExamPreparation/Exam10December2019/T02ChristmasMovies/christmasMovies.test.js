@@ -73,6 +73,12 @@ describe('ChristmasMovies Tests', () => {
             expect(() => instance.mostStarredActor()).to.throw('You have not watched a movie yet this year!');
         });
 
-      
+        it('should return the correct message for the most starred actor', () => {
+            instance.buyMovie('Star', ['SuperStar', 'Someone']);
+            instance.buyMovie('Scarry Marcy', ['SuperStar', 'TheOne']);
+            instance.buyMovie('The Snow', ['SuperStar', 'Really?']);
+    
+            expect(instance.mostStarredActor()).to.equal(`The most starred actor is SuperStar and starred in 3 movies!`)
+        });
     });
 });
