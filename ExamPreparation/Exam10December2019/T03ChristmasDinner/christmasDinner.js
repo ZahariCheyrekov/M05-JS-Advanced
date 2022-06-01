@@ -6,4 +6,11 @@ class ChristmasDinner {
         this.guests = {};
     }
 
+    set _budget(num) {
+        if (num < 0) {
+            throw new Error('The budget cannot be a negative number');
+        }
+        this.budget = num;
+    }
+
 }
