@@ -29,5 +29,14 @@ class Story {
         return `${username} liked ${this.title}!`;
     }
 
+    dislike(username) {
+        if (!this.likes.includes(username)) {
+            throw new Error('You can\'t dislike this story!');
+        }
+
+        this.likes.filter(user => user !== username);
+        return `${this.username} disliked ${this.title}`;
+    }
+
     
 }
