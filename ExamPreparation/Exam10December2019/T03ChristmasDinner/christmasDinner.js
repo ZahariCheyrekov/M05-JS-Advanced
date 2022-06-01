@@ -68,3 +68,21 @@ dinner.shopping(['Peppers', 1]);
 dinner.shopping(['Fruits', 40]);
 dinner.shopping(['Honey', 10]);
 
+dinner.recipes({
+    recipeName: 'Oshav',
+    productsList: ['Fruits', 'Honey']
+});
+dinner.recipes({
+    recipeName: 'Folded cabbage leaves filled with rice',
+    productsList: ['Cabbage', 'Rice', 'Salt', 'Savory']
+});
+dinner.recipes({
+    recipeName: 'Peppers filled with beans',
+    productsList: ['Beans', 'Peppers', 'Salt']
+});
+
+dinner.inviteGuests('Ivan', 'Oshav');
+dinner.inviteGuests('Petar', 'Folded cabbage leaves filled with rice');
+dinner.inviteGuests('Georgi', 'Peppers filled with beans');
+
+console.log(dinner.showAttendance());
