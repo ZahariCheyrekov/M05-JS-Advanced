@@ -85,8 +85,7 @@ describe('CompanyAdministration Tests', () => {
         });
 
         it('should throw error for invalid index value less than zero', () => {
-            expect(() => companyAdministration.firedEmployee(['Sam', 'Mark', 'Emma'], -10))
-                .to.throw('Invalid input');
+            expect(() => companyAdministration.firedEmployee(['Sam', 'Mark', 'Emma'], -1)).to.throw('Invalid input');
         });
 
         it('should throw error for invalid index value equal to array length', () => {
