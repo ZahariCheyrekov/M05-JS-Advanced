@@ -38,11 +38,9 @@ function validate() {
             validOut.push(true);
         }
 
-        if (
-            passWord.value === confirmPass.value &&
+        if (passWord.value === confirmPass.value &&
             passTest.exec(confirmPass.value) != null &&
-            passTest.exec(passWord.value) != null
-        ) {
+            passTest.exec(passWord.value) != null) {
             confirmPass.style.borderColor = "";
             passWord.style.borderColor = "";
             validOut.push(true);
