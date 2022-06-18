@@ -4,12 +4,16 @@ JS Advanced course gives deeper knowledge about JavaScipt, syntax, arrays, matri
 
 # Course Overview
 
-- Syntax, Functions and Statements
-- Arrays and Nested Arrays
-- Objects and Composition
+- <a href="/Syntax">Syntax, Functions and Statements</a>
+- <a href="/Arrays">Arrays and Nested Arrays</a>
+- <a href="/Objects">Objects and Composition</a>
 - DOM Introduction
 - DOM Manipulations and Events
 - Advanced Functions
 - Unit Testing and Error Handling
 - Classes
 - Prototypes and Inheritance
+
+<p id="Syntax">Syntax,FunctionsAndStatements</p>
+<p id="Arrays">Arrays and Nested Arrays</p>
+<p id="Objectss">Objects and Composition</p>
