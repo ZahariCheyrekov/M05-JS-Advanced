@@ -50,14 +50,7 @@ function solve() {
 
    
     articleEl.appendChild(titlePost);
-    articleEl.appendChild(categoryPost);
-    articleEl.appendChild(contentPost);
-
-    liItem.appendChild(articleEl);
-    liItem.appendChild(approveBtn);
-    liItem.appendChild(editBtn);
-
-    ulEl.appendChild(liItem);
+   
 
     clearInputFields();
   }
