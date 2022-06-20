@@ -14,9 +14,6 @@ function solve() {
     const contentText = contentField.value;
     let elementToRemove = null;
 
-    if (!titleText || !categoryText || !contentText) {
-      return;
-    }
 
     const liItem = document.createElement('li');
     liItem.classList.add('rpost');
