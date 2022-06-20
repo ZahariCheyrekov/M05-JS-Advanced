@@ -48,19 +48,7 @@ function solve() {
       contentField.value = contentText;
     });
 
-    const approveBtn = document.createElement('button');
-    approveBtn.classList.add('action-btn');
-    approveBtn.classList.add('approve');
-    approveBtn.textContent = 'Approve';
-    approveBtn.addEventListener('click', (ev) => {
-      elementToRemove = ev.target.parentElement;
-      elementToRemove.removeChild(editBtn);
-      elementToRemove.removeChild(approveBtn);
-
-      ulEl.removeChild(elementToRemove);
-      publishedList.appendChild(elementToRemove);
-    });
-
+   
     articleEl.appendChild(titlePost);
     articleEl.appendChild(categoryPost);
     articleEl.appendChild(contentPost);
