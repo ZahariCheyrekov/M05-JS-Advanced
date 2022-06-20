@@ -7,12 +7,6 @@ function solve() {
   const publishBtn = document.getElementById('publish-btn');
   publishBtn.addEventListener('click', getInformation);
 
-  
-  function getInformation() {
-    const titleText = titleField.value;
-    const categoryText = categoryField.value;
-    const contentText = contentField.value;
-    let elementToRemove = null;
 
 
     
