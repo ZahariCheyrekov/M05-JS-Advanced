@@ -76,9 +76,5 @@ function solve() {
 
 
 
-  function clearInputFields() {
-    titleField.value = '';
-    categoryField.value = '';
-    contentField.value = '';
-  }
+
 }
