@@ -74,11 +74,7 @@ function solve() {
     clearInputFields();
   }
 
-  function clearPosts() {
-    while (publishedList.firstChild) {
-      publishedList.removeChild(publishedList.firstChild);
-    }
-  }
+
 
   function clearInputFields() {
     titleField.value = '';
