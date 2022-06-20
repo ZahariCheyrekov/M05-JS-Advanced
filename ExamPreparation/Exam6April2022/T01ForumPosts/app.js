@@ -29,23 +29,7 @@ function solve() {
     const contentPost = document.createElement('p');
     contentPost.textContent = `Content: ${contentField.value}`;
 
-    const editBtn = document.createElement('button');
-    editBtn.classList.add('action-btn');
-    editBtn.classList.add('edit');
-    editBtn.textContent = 'Edit';
-    editBtn.addEventListener('click', () => {
-      ulEl.removeChild(liItem);
-
-      titleField.value = titleText;
-      categoryField.value = categoryText;
-      contentField.value = contentText;
-    });
-
    
-    articleEl.appendChild(titlePost);
-   
-
-    clearInputFields();
   }
 
 
