@@ -7,11 +7,7 @@ function solve() {
   const publishBtn = document.getElementById('publish-btn');
   publishBtn.addEventListener('click', getInformation);
 
-  const ulEl = document.getElementById('review-list');
-  const publishedList = document.getElementById('published-list');
-  const clearBtn = document.getElementById('clear-btn');
-  clearBtn.addEventListener('click', clearPosts);
-
+  
   function getInformation() {
     const titleText = titleField.value;
     const categoryText = categoryField.value;
