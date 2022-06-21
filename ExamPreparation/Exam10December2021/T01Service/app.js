@@ -5,6 +5,7 @@ function solve() {
     const description = document.getElementById('description');
     const name = document.getElementById('client-name');
     const phone = document.getElementById('client-phone');
+  
     const sendBtn = document.querySelector('form button');
     sendBtn.addEventListener('click', sendOrder);
 
