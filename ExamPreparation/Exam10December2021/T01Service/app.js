@@ -80,6 +80,6 @@ function solve() {
     function clearInputFields() {
         description.value = '';
         name.value = '';
-        phone.value = '';
+        phone.value = ''; 
     }
 }
