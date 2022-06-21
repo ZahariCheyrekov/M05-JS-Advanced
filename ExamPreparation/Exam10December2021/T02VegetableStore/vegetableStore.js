@@ -84,7 +84,6 @@ class VegetableStore {
         sortedVeggies.forEach(v => report.push(`${v.type}-${v.quantity}-$${v.price}`));
 
         report.push(`The owner of the store is ${this.owner}, and the location is ${this.location}.`);
-
         return report.join('\n');
     }
 
