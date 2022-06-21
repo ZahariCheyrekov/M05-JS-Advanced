@@ -7,6 +7,7 @@ const companyAdministration = {
                 return `${name} is not approved for this position.`;
             }
         }
+
         throw new Error(`We are not looking for workers for this position.`);
     },
 
