@@ -17,7 +17,8 @@ class VegetableStore {
 
             if (existingVegetable) {
                 existingVegetable.quantity += quantity;
-                if (existingVegetable.price < price) {
+               
+		 if (existingVegetable.price < price) {
                     existingVegetable.price = price;
                 }
             } else {
