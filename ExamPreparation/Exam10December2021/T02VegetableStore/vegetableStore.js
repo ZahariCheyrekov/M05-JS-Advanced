@@ -12,7 +12,7 @@ class VegetableStore {
             let [type, quantity, price] = element.split(' ');
             quantity = Number(quantity);
             price = Number(price);
-
+ 
             const existingVegetable = this.findVegetableByType(type);
 
             if (existingVegetable) {
