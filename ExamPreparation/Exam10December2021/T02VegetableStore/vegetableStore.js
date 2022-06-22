@@ -15,7 +15,7 @@ class VegetableStore {
  
             const existingVegetable = this.findVegetableByType(type);
 
-            if (existingVegetable) {
+            if (existingVegetable) { 
                 existingVegetable.quantity += quantity;
                
 		 if (existingVegetable.price < price) {
