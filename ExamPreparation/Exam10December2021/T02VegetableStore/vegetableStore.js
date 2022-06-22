@@ -31,7 +31,7 @@ class VegetableStore {
                 this.availableProducts.push(vegetable);
                 result.push(type);
             }
-        }
+        } 
 
         return `Successfully added ${result.join(', ')}`;
     }
