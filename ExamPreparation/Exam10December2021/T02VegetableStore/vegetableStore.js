@@ -3,7 +3,7 @@ class VegetableStore {
         this.owner = owner;
         this.location = location;
         this.availableProducts = [];
-    }
+    } 
 
     loadingVegetables(vegetables) {
         let result = [];
