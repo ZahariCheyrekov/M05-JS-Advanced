@@ -39,9 +39,7 @@ describe('FlowerShop tests', () => {
     });
 
     describe('Test should check sellFlowers function', () => {
-        it('should trow error for invalid gardenArr type different from array', () => {
-            expect(() => flowerShop.sellFlowers('invalid', 10)).to.throw(Error);
-        });
+     
 
         it('should trow error for invalid space type different from number', () => {
             expect(() => flowerShop.sellFlowers([], 'invalid')).to.throw(Error);
