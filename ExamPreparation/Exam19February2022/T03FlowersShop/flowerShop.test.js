@@ -5,12 +5,6 @@ describe('FlowerShop tests', () => {
     describe('Tests should check calcPriceOfFlowers function', () => {
 
 
-      
-
-        it('should throw error for wrong type of price and quantity values', () => {
-            expect(() => flowerShop.calcPriceOfFlowers('Rose', 'invalid', 'invalid')).to.throw(Error);
-        });
-
         it('should throw error for wrong input values type', () => {
             expect(() => flowerShop.calcPriceOfFlowers(10, 'invalid', 'invalid')).to.throw(Error);
         });
