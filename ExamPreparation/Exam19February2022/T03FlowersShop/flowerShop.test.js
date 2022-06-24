@@ -3,9 +3,7 @@ const flowerShop = require('./flowerShop');
 
 describe('FlowerShop tests', () => {
     describe('Tests should check calcPriceOfFlowers function', () => {
-        it('should throw error for wrong type of flower value', () => {
-            expect(() => flowerShop.calcPriceOfFlowers(10, 10, 10)).to.throw(Error);
-        });
+
 
         it('should throw error for wrong type of price value', () => {
             expect(() => flowerShop.calcPriceOfFlowers('Rose', 'invalid', 10)).to.throw(Error);
