@@ -3,7 +3,29 @@ const flowerShop = require('./flowerShop');
 
 describe('FlowerShop tests', () => {
     describe('Tests should check calcPriceOfFlowers function', () => {
+        it('should throw error for wrong type of flower value', () => {
+            expect(() => flowerShop.calcPriceOfFlowers(10, 10, 10)).to.throw(Error);
+        });
 
+        it('should throw error for wrong type of price value', () => {
+            expect(() => flowerShop.calcPriceOfFlowers('Rose', 'invalid', 10)).to.throw(Error);
+        });
+
+        it('should throw error for wrong type of quantity value', () => {
+            expect(() => flowerShop.calcPriceOfFlowers('Rose', 10, 'invalid')).to.throw(Error);
+        });
+
+        it('should throw error for wrong type of flower and price values', () => {
+            expect(() => flowerShop.calcPriceOfFlowers(10, 'invalid', 10)).to.throw(Error);
+        });
+
+        it('should throw error for wrong type of flower and quantity values', () => {
+            expect(() => flowerShop.calcPriceOfFlowers(10, 10, 'invalid')).to.throw(Error);
+        });
+
+        it('should throw error for wrong type of price and quantity values', () => {
+            expect(() => flowerShop.calcPriceOfFlowers('Rose', 'invalid', 'invalid')).to.throw(Error);
+        });
 
         it('should throw error for wrong input values type', () => {
             expect(() => flowerShop.calcPriceOfFlowers(10, 'invalid', 'invalid')).to.throw(Error);
@@ -31,11 +53,17 @@ describe('FlowerShop tests', () => {
     });
 
     describe('Test should check sellFlowers function', () => {
-     
+        it('should trow error for invalid gardenArr type different from array', () => {
+            expect(() => flowerShop.sellFlowers('invalid', 10)).to.throw(Error);
+        });
 
-      
+        it('should trow error for invalid space type different from number', () => {
+            expect(() => flowerShop.sellFlowers([], 'invalid')).to.throw(Error);
+        });
 
-      
+        it('should trow error for invalid gardenArr type and space', () => {
+            expect(() => flowerShop.sellFlowers('invalid', 'invalid')).to.throw(Error);
+        });
 
         it('should trow error for invalid space in of the garden', () => {
             expect(() => flowerShop.sellFlowers([], -10)).to.throw(Error);
