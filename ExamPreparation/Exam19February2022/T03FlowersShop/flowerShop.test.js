@@ -43,9 +43,7 @@ describe('FlowerShop tests', () => {
             expect(() => flowerShop.sellFlowers([], 'invalid')).to.throw(Error);
         });
 
-        it('should trow error for invalid gardenArr type and space', () => {
-            expect(() => flowerShop.sellFlowers('invalid', 'invalid')).to.throw(Error);
-        });
+      
 
         it('should trow error for invalid space in of the garden', () => {
             expect(() => flowerShop.sellFlowers([], -10)).to.throw(Error);
