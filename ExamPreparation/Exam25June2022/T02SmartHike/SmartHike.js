@@ -53,7 +53,17 @@ class SmartHike {
         return `You hiked ${peak} peak for ${time} hours and you have ${this.resources}% resources left`;
     }
 
-   
+    rest(time) {
+        this.resources += time * 10;
+
+        if (this.resources > 100) {
+            this.resources = 100;
+
+            return 'Your resources are fully recharged. Time for hiking!';
+        }
+
+        return `You have rested for ${time} hours and gained ${time * 10}% resources`;
+    }
 
     
 }
