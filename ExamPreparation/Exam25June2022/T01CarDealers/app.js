@@ -47,7 +47,16 @@ function solve() {
     const btnsTD = createComponentDOM('td', '', '');
 
     const editBTN = createComponentDOM('button', 'Edit', 'action-btn edit');
-  
+    editBTN.addEventListener('click', () => {
+      trDOM.remove()
+
+      makeFieldInput.value = makeValue;
+      modelFieldInput.value = modelValue;
+      yearFieldInput.value = yearValue;
+      fuelTypeInputOption.value = fuelValue;
+      originalCostInputField.value = originalCstValue;
+      sellingPriceInputField.value = sellingPrValue;
+    });
 
     const sellBTN = createComponentDOM('button', 'Sell', 'action-btn sell');
     sellBTN.addEventListener('click', () => {
