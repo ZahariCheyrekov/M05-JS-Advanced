@@ -65,6 +65,12 @@ class SmartHike {
         return `You have rested for ${time} hours and gained ${time * 10}% resources`;
     }
 
-    
+    showRecord(criteria) {
+        if (this.listOfHikes.length == 0) {
+            return `${this.username} has not done any hiking yet`;
+        }
+
+        
+    }
 }
 
