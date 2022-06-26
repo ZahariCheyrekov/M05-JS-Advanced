@@ -96,6 +96,20 @@ describe('CarService Tests', () => {
                 .partsToBuy([{ part: 'smth new chanxe', price: 99987 }], ['smth that is not here'])).to.equal(0);
         });
 
-       
+        it('should return that the total sum of the partsToBuy with input values of empty arrays is equal to 0', () => {
+            expect(carService
+                .partsToBuy([], [])).to.equal(0);
+        });
+
+        it('should return that the total sum of the partsToBuy is equal to 99987', () => {
+            expect(carService
+                .partsToBuy([{ part: 'smth new chanxe', price: 99987 }], ['smth new chanxe'])).to.equal(99987);
+        });
+
+        it('should return that the total sum of the partsToBuy is equal to 99999', () => {
+            expect(carService
+                .partsToBuy([{ part: 'smth new chanxe', price: 99987 }, { part: 'chanxeaffa', price: 12 }],
+                    ['smth new chanxe', 'chanxeaffa'])).to.equal(99999);
+        });
     });
 });
