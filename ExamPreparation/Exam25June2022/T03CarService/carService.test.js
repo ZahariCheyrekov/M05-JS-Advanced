@@ -16,6 +16,11 @@ describe('CarService Tests', () => {
                 .equal('The issue with the car is more severe and it will cost more money');
         });
 
+        it('should return taht the overall price should be a bit cheaper', () => {
+            expect(carService.isItExpensive('Something'))
+                .to
+                .equal('The overall price will be a bit cheaper');
+        });
     });
 
     describe('Tests should check discount task function', () => {
