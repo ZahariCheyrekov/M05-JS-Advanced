@@ -91,6 +91,11 @@ describe('CarService Tests', () => {
             expect(() => carService.partsToBuy(-10, -10)).to.throw('Invalid input');
         });
 
+        it('should return that the total sum of the partsToBuy is equal to 0', () => {
+            expect(carService
+                .partsToBuy([{ part: 'smth new chanxe', price: 99987 }], ['smth that is not here'])).to.equal(0);
+        });
+
        
     });
 });
