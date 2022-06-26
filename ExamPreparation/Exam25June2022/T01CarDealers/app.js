@@ -47,7 +47,7 @@ function solve() {
     const btnsTD = createComponentDOM('td', '', '');
 
     const editBTN = createComponentDOM('button', 'Edit', 'action-btn edit');
-   
+  
 
     const sellBTN = createComponentDOM('button', 'Sell', 'action-btn sell');
     sellBTN.addEventListener('click', () => {
