@@ -1,5 +1,4 @@
 class SmartHike {
-
     constructor(username) {
         this.username = username;
         this.goals = {};
