@@ -50,7 +50,26 @@ function solve() {
    
 
     const sellBTN = createComponentDOM('button', 'Sell', 'action-btn sell');
-   
+    sellBTN.addEventListener('click', () => {
+      trDOM.remove();
+
+      const liElCar = createComponentDOM('li', '', 'each-list');
+      const spanCarData = createComponentDOM('span', `${makeValue} ${modelValue}`, '');
+      const spanYearData = createComponentDOM('span', `${yearValue}`, '');
+      const diffPriceNew = Number(sellingPrValue);
+      const diffPriceOld = Number(originalCstValue);
+      const finalRes = Number(diffPriceNew - diffPriceOld);
+      const spanPriceDiffCarData = createComponentDOM('span', `${finalRes}`, '');
+
+      liElCar.appendChild(spanCarData);
+      liElCar.appendChild(spanYearData);
+      liElCar.appendChild(spanPriceDiffCarData);
+
+      carListData.appendChild(liElCar);
+
+      const currentProfitDataNum = Number(profitInfoData.textContent);
+      profitInfoData.textContent = Number(currentProfitDataNum + finalRes).toFixed(2);
+    });
 
   }
 
