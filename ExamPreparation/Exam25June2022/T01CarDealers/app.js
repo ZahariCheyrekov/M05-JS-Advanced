@@ -35,5 +35,24 @@ function solve() {
       return;
     }
 
+    const trDOM = createComponentDOM('tr', '', 'row');
+
+    const makeTD = createComponentDOM('td', `${makeValue}`, '');
+    const modelTD = createComponentDOM('td', `${modelValue}`, '');
+    const yearTD = createComponentDOM('td', `${yearValue}`, '');
+    const fuelTD = createComponentDOM('td', `${fuelValue}`, '');
+    const orgCstTD = createComponentDOM('td', `${originalCstValue}`, '');
+    const sellPriceTD = createComponentDOM('td', `${sellingPrValue}`, '');
+
+    const btnsTD = createComponentDOM('td', '', '');
+
+    const editBTN = createComponentDOM('button', 'Edit', 'action-btn edit');
+   
+
+    const sellBTN = createComponentDOM('button', 'Sell', 'action-btn sell');
+   
+
   }
+
+ 
 }
