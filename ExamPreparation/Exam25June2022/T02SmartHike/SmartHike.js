@@ -83,7 +83,15 @@ class SmartHike {
                 return `${this.username} has not done any ${criteria} hiking yet`;
             }
 
-          
+            let bestTime = Number.MAX_SAFE_INTEGER;
+            let bestPeakName = '';
+            hikesByType.forEach(hike => {
+                const peakTimeHikingValue = hike.time;
+                if (peakTimeHikingValue < bestTime) {
+                    bestTime = peakTimeHikingValue;
+                    bestPeakName = hike.peak;
+                }
+            });
 
             return `${this.username}'s best ${criteria} hike is ${bestPeakName} peak, for ${bestTime} hours`;
 
