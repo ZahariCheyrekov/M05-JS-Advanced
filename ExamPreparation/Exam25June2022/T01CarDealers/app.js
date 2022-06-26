@@ -80,6 +80,20 @@ function solve() {
       profitInfoData.textContent = Number(currentProfitDataNum + finalRes).toFixed(2);
     });
 
+    btnsTD.appendChild(editBTN);
+    btnsTD.appendChild(sellBTN);
+
+    trDOM.appendChild(makeTD);
+    trDOM.appendChild(modelTD);
+    trDOM.appendChild(yearTD);
+    trDOM.appendChild(fuelTD);
+    trDOM.appendChild(orgCstTD);
+    trDOM.appendChild(sellPriceTD);
+    trDOM.appendChild(btnsTD);
+
+    tbody.appendChild(trDOM);
+
+    clearAllInputsForm();
   }
 
  
