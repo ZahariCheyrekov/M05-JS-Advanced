@@ -73,7 +73,19 @@ class SmartHike {
         if (criteria === 'hard' || criteria === 'easy') {
             let hikesByType = [];
 
-           
+            this.listOfHikes.forEach(hike => {
+                if (hike.difficultyLevel === criteria) {
+                    hikesByType.push(hike);
+                }
+            });
+
+            if (hikesByType.length == 0) {
+                return `${this.username} has not done any ${criteria} hiking yet`;
+            }
+
+          
+
+            return `${this.username}'s best ${criteria} hike is ${bestPeakName} peak, for ${bestTime} hours`;
 
         } else if (criteria === 'all') {
             let resultOfShowRecord = [];
