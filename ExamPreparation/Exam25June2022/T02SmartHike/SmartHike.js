@@ -35,7 +35,22 @@ class SmartHike {
             }
         }
 
-       
+        if (!existingName) {
+            throw new Error(`${peak} is not in your current goals`);
+        }
+
+        const diffBetweenResourcesCurrent = (this.resources - time) * 10;
+        if (diffBetweenResourcesCurrent < 0) {
+            return 'You don\'t have enough resources to complete the hike';
+        }
+
+        this.resources -= time * 10;
+        if (this.resources <= 0) {
+            return 'You don\'t have enough resources to complete the hike';
+        }
+
+        this.listOfHikes.push({ peak, time, difficultyLevel });
+        return `You hiked ${peak} peak for ${time} hours and you have ${this.resources}% resources left`;
     }
 
    
