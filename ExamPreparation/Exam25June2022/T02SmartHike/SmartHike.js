@@ -70,7 +70,20 @@ class SmartHike {
             return `${this.username} has not done any hiking yet`;
         }
 
-        
+        if (criteria === 'hard' || criteria === 'easy') {
+            let hikesByType = [];
+
+           
+
+        } else if (criteria === 'all') {
+            let resultOfShowRecord = [];
+
+            resultOfShowRecord.push('All hiking records:');
+            this.listOfHikes.forEach(hike =>
+                resultOfShowRecord.push(`${this.username} hiked ${hike.peak} for ${hike.time} hours`));
+
+            return resultOfShowRecord.join('\n');
+        }
     }
 }
 
