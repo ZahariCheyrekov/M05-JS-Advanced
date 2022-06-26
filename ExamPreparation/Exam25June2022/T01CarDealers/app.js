@@ -110,4 +110,12 @@ function solve() {
     return newEl;
   }
 
+  function clearAllInputsForm() {
+    makeFieldInput.value = '';
+    modelFieldInput.value = '';
+    yearFieldInput.value = '';
+    fuelTypeInputOption.value = '';
+    originalCostInputField.value = '';
+    sellingPriceInputField.value = '';
+  }
 }
