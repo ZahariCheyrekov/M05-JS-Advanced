@@ -79,6 +79,18 @@ describe('CarService Tests', () => {
     });
 
     describe('Tests should check partsToBuy task function', () => {
+        it('should throw error for invalid type of first param with value number', () => {
+            expect(() => carService.partsToBuy(-10, ['a', 'b', 'c'])).to.throw('Invalid input');
+        });
 
+        it('should throw error for invalid type of second param with value number', () => {
+            expect(() => carService.partsToBuy(['a', 'b', 'c'], -10)).to.throw('Invalid input');
+        });
+
+        it('should throw error for invalid type input params with value number', () => {
+            expect(() => carService.partsToBuy(-10, -10)).to.throw('Invalid input');
+        });
+
+       
     });
 });
