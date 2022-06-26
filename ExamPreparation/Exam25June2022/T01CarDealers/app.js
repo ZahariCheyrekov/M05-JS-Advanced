@@ -96,5 +96,18 @@ function solve() {
     clearAllInputsForm();
   }
 
- 
+  function createComponentDOM(typeEl, contentText, classInfoName) {
+    const newEl = document.createElement(typeEl);
+
+    if (contentText) {
+      newEl.textContent = contentText;
+    }
+
+    if (classInfoName) {
+      newEl.className = classInfoName;
+    }
+
+    return newEl;
+  }
+
 }
