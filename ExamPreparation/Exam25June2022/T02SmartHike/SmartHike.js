@@ -25,7 +25,18 @@ class SmartHike {
         return `You have successfully added a new goal - ${peak}`;
     }
 
-    
+    hike(peak, time, difficultyLevel) {
+        let existingName = false;
+
+        for (const key of Object.keys(this.goals)) {
+            if (key == peak) {
+                existingName = true;
+                break;
+            }
+        }
+
+       
+    }
 
    
 
