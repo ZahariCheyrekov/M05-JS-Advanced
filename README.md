@@ -15,7 +15,7 @@ JS Advanced course gives deeper knowledge about JavaScipt, syntax, arrays, matri
 - <a href="#Prototypes">Prototypes and Inheritance</a>
 
 
-## <p id="Syntax">Syntax, FunctionsAndStatements</p>
+## <p id="Syntax">Syntax, Functions And Statements</p>
 - Data Types
 - Variables
 - Strict Mode
