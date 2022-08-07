@@ -17,7 +17,7 @@ JS Advanced course gives deeper knowledge about JavaScipt, syntax, arrays, matri
 
 ## <p id="Syntax">Syntax, Functions And Statements</p>
 - Data Types
-- Variables
+- Variables 
 - Strict Mode
 - Operators
 - Functions
